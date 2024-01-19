@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://clp8wic1t4jmu"]
+
+[ext_resource type="Texture2D" uid="uid://cwcvo8bsh2m6u" path="res://icon.svg" id="1_ecova"]
+
+[node name="tempTest" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(259, 212)
+texture = ExtResource("1_ecova")
