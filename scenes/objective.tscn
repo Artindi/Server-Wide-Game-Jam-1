@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuqauanstlwym"]
+
+[ext_resource type="Script" path="res://objective.gd" id="1_dikow"]
+[ext_resource type="Texture2D" uid="uid://cwcvo8bsh2m6u" path="res://icon.svg" id="2_ei4ky"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjckq"]
+size = Vector2(42, 43)
+
+[node name="Objective" type="StaticBody2D"]
+collision_layer = 0
+script = ExtResource("1_dikow")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.5, -0.5)
+scale = Vector2(0.335938, 0.335938)
+texture = ExtResource("2_ei4ky")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_jjckq")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_jjckq")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
