@@ -1,16 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://clp8wic1t4jmu"]
+[gd_scene load_steps=4 format=3 uid="uid://clp8wic1t4jmu"]
 
 [ext_resource type="Texture2D" uid="uid://cwcvo8bsh2m6u" path="res://icon.svg" id="1_ecova"]
+[ext_resource type="Script" path="res://grow.gd" id="1_jx6sy"]
 
-[node name="tempTest" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykip7"]
+size = Vector2(129, 132)
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(249, 203)
-rotation = 1.54904
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_jx6sy")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(304, 402)
+scale = Vector2(0.984375, 1)
 texture = ExtResource("1_ecova")
 
-[node name="Icon2" type="Sprite2D" parent="."]
-position = Vector2(299, 447)
-rotation = 3.09808
-scale = Vector2(1, 1)
-texture = ExtResource("1_ecova")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(304.5, 400)
+shape = SubResource("RectangleShape2D_ykip7")
