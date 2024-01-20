@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://djqvf7d2jhl48"]
 
-[ext_resource type="Texture2D" uid="uid://cje6fn8rihq63" path="res://some_tiles.png" id="1_dmkdw"]
+[ext_resource type="Texture2D" uid="uid://cje6fn8rihq63" path="res://assets/images/tilesets/some_tiles.png" id="1_dmkdw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u7tgh"]
 texture = ExtResource("1_dmkdw")
@@ -358,4 +358,3 @@ sources/1 = SubResource("TileSetAtlasSource_u7tgh")
 [node name="TileMap" type="TileMap"]
 tile_set = SubResource("TileSet_ykb2q")
 format = 2
-layer_0/tile_data = PackedInt32Array(-65533, 65537, 1, 3, 65537, 2, 65539, 65537, 2, 131075, 65537, 3, 131076, 131073, 3, 131077, 131073, 3, 131078, 131073, 3, 65542, 131073, 2, 6, 131073, 2, -65530, 131073, 1, -65529, 196609, 1, 7, 196609, 2, 65543, 196609, 2, 131079, 196609, 3, 65540, 131073, 2, 4, 131073, 2, -65532, 131073, 1, 65541, 131073, 2, 5, 131073, 2, -65531, 131073, 1, -131054, 1, 1, -65518, 327681, 4, -65517, 196609, 0, 262163, 1, 3, 196627, 327681, 5, 196628, 196609, 0, -131061, 1, 1, -65525, 327681, 4, -65524, 196609, 0, 262156, 1, 3, 196620, 327681, 5, 196621, 196609, 0, 262151, 131073, 5, 262150, 65537, 0, 262152, 196609, 0, 327687, 1, 3, 15, 1, 3, -65521, 1, 2, -131057, 327681, 5, -131056, 196609, 0)

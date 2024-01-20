@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://clp8wic1t4jmu"]
+
+[ext_resource type="PackedScene" uid="uid://2aa7gv0i0jdn" path="res://scenes/player.tscn" id="1_7ckp8"]
+[ext_resource type="PackedScene" uid="uid://djqvf7d2jhl48" path="res://scenes/tile_map.tscn" id="2_ihfpa"]
+
+[node name="tempTest" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_7ckp8")]
+position = Vector2(47, 208)
+
+[node name="TileMap" parent="." instance=ExtResource("2_ihfpa")]
