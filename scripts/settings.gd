@@ -9,7 +9,7 @@ extends Control
 @export var music_vol : Slider
 @export var sfx_vol : Slider
 
-# Functionss
+# Functions
 func _on_display_mode_btn_item_selected(index) -> void:
 	SaveSystem.save_game.toggle_fullscreen(index)
 

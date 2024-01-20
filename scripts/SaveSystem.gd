@@ -19,6 +19,11 @@ func load_game() -> void:
 		save_game = ResourceLoader.load("user://savegame.res")
 	else:
 		save_game = ResourceLoader.load("user://savegame.tres")
+		
+	SaveSystem.save_game.toggle_fullscreen(SaveSystem.save_game.display_option_value)
+	SaveSystem.save_game.update_vol(0, SaveSystem.save_game.master_vol_value)
+	SaveSystem.save_game.update_vol(1, SaveSystem.save_game.music_vol_value)
+	SaveSystem.save_game.update_vol(2, SaveSystem.save_game.sfx_vol_value)
 
 func restart() -> void:
 	save_game = SaveFile.new()
