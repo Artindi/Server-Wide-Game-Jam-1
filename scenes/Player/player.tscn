@@ -8,7 +8,7 @@
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjgpk"]
-size = Vector2(16, 16)
+size = Vector2(4, 16)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_30jw6")
@@ -31,5 +31,7 @@ shape = SubResource("RectangleShape2D_rjgpk")
 
 [node name="Sprite2D" type="Sprite2D" parent="FootCollision"]
 texture = ExtResource("3_rhp3k")
+
+[node name="Sections" type="Node2D" parent="."]
 
 [connection signal="timeout" from="growth_timer" to="." method="_on_growth_timer_timeout"]

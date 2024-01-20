@@ -30,6 +30,10 @@ SaveSystem="*res://scripts/SaveSystem.gd"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 
+[dotnet]
+
+project/assembly_name="Server Wide Game Jam 1"
+
 [file_customization]
 
 folder_colors={

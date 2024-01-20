@@ -29,13 +29,22 @@ func moveFeet(distance):
 
 func spawnSection():
 	var section = SECTION.instantiate()
-	add_child(section)
+	$Sections.add_child(section)
 	section.global_position = self.global_position
 	section.position.y += heightCount * 16
+	section.index = heightCount
 	moveFeet(heightCount)
 
+func breakAtSection(section):
+	heightCount = $Sections.get_child_count() - section.index - 1
+	$FootCollision.position = section.position - Vector2(0, 16)
+	for i in range(section.index - 1, $Sections.get_child_count()):
+		$Sections.get_child(i).queue_free()
+	pass
+
 func _on_growth_timer_timeout():
-	position.y -= 16
+	self.global_position.y -= 16
 	heightCount += 1
 	spawnSection()
 	pass # Replace with function body.
+
