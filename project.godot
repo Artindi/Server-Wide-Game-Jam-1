@@ -14,9 +14,17 @@ config/name="Server Wide Game Jam 1"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [layer_names]
 
 2d_physics/layer_1="World"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Death"
-2d_physics/layer_4="BreakPoint"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
