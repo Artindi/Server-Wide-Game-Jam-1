@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://2aa7gv0i0jdn"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_30jw6"]
+[ext_resource type="Texture2D" uid="uid://c2bkvmbwliwbl" path="res://assets/images/characters/PlayerTop.png" id="2_ka8wg"]
+[ext_resource type="Texture2D" uid="uid://b3afgq3cd58wf" path="res://assets/images/characters/PlayerBase.png" id="3_rhp3k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74oul"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjgpk"]
+size = Vector2(16, 16)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_30jw6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ka8wg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_74oul")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="growth_timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="FootCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rjgpk")
+
+[node name="Sprite2D" type="Sprite2D" parent="FootCollision"]
+texture = ExtResource("3_rhp3k")
+
+[connection signal="timeout" from="growth_timer" to="." method="_on_growth_timer_timeout"]

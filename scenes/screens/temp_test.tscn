@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://clp8wic1t4jmu"]
 
-[ext_resource type="PackedScene" uid="uid://2aa7gv0i0jdn" path="res://scenes/player.tscn" id="1_7ckp8"]
+[ext_resource type="PackedScene" uid="uid://2aa7gv0i0jdn" path="res://scenes/Player/player.tscn" id="1_7ckp8"]
 [ext_resource type="PackedScene" uid="uid://djqvf7d2jhl48" path="res://scenes/tile_map.tscn" id="2_ihfpa"]
 
 [node name="tempTest" type="Node2D"]
@@ -9,3 +9,4 @@
 position = Vector2(47, 208)
 
 [node name="TileMap" parent="." instance=ExtResource("2_ihfpa")]
+layer_0/tile_data = PackedInt32Array(917505, 131073, 1, 917506, 131073, 1, 917507, 131073, 1, 917508, 131073, 1, 917509, 131073, 1, 917510, 131073, 1, 917511, 131073, 1, 917512, 131073, 1, 917513, 196609, 1, 917504, 131073, 1, 983040, 131073, 3, 983041, 131073, 3, 983042, 131073, 3, 983043, 131073, 3, 983044, 131073, 3, 983045, 131073, 3, 983046, 131073, 3, 983047, 131073, 3, 983048, 131073, 3, 983049, 196609, 3, 1048575, 65537, 3, 983039, 65537, 1, 786438, 65537, 0, 786439, 131073, 0, 786440, 196609, 0)
