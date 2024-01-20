@@ -1,16 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmq62605w5h2t"]
+[gd_scene load_steps=5 format=3 uid="uid://bmq62605w5h2t"]
 
 [ext_resource type="Texture2D" uid="uid://boxid1payhpmh" path="res://assets/images/characters/Section1.png" id="1_0cl72"]
+[ext_resource type="Script" path="res://scripts/section.gd" id="1_p8ugg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gykbv"]
-size = Vector2(16, 16)
+size = Vector2(4, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wsrn"]
+size = Vector2(6, 10)
 
 [node name="Section" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 8
+script = ExtResource("1_p8ugg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0cl72")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_gykbv")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_0cl72")
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_6wsrn")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

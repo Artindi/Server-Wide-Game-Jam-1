@@ -28,14 +28,25 @@ func moveFeet(distance):
 	pass
 
 func spawnSection():
+	self.global_position.y -= 16
+	moveFeet($Sections.get_child_count() + 2)
 	var section = SECTION.instantiate()
-	add_child(section)
+	$Sections.add_child(section)
 	section.global_position = self.global_position
-	section.position.y += heightCount * 16
-	moveFeet(heightCount)
+	section.position.y += $Sections.get_child_count() * 16
+	section.index = $Sections.get_child_count()
+
+
 
 func _on_growth_timer_timeout():
-	position.y -= 16
-	heightCount += 1
 	spawnSection()
+	pass # Replace with function body.
+
+
+
+func _on_break_feet_body_entered(body):
+	if body.name == "TileMap":
+		moveFeet($Sections.get_child_count())
+		velocity.y = -128
+		pass
 	pass # Replace with function body.
