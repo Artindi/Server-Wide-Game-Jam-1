@@ -21,8 +21,8 @@ func _ready() -> void:
 	if SaveSystem.save_game.level >= 6:
 		level7.show()
 
-func _on_back_button_pressed():
+func _on_back_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/screens/main_menu.tscn")
 
-func _on_level_1_button_pressed():
+func _on_level_1_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/screens/temp_test.tscn")
