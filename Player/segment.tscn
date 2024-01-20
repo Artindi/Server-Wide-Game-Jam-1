@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbc5v5obt42yb"]
+
+[ext_resource type="Texture2D" uid="uid://boxid1payhpmh" path="res://Player/Section1.png" id="1_rpctv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbmrs"]
+size = Vector2(16, 14)
+
+[node name="Segment" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fbmrs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_rpctv")

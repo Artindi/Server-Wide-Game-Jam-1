@@ -9,7 +9,7 @@ size = Vector2(143, 20)
 [node name="tempTest" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(10, 238)
+position = Vector2(14, 238)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_3ikpi")
