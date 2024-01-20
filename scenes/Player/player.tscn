@@ -10,8 +10,9 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjgpk"]
 size = Vector2(16, 16)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("foot_collision")]
 script = ExtResource("1_30jw6")
+foot_collision = NodePath("FootCollision")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ka8wg")
