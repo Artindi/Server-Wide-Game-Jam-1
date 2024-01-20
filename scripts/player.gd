@@ -24,7 +24,6 @@ func _physics_process(delta):
 	move_and_slide()
 
 func moveFeet(distance):
-	
 	$FootCollision.position.y = distance * 16
 	pass
 
@@ -41,7 +40,6 @@ func spawnSection():
 
 func _on_growth_timer_timeout():
 	spawnSection()
-		
 	pass # Replace with function body.
 
 
@@ -49,6 +47,6 @@ func _on_growth_timer_timeout():
 func _on_break_feet_body_entered(body):
 	if body.name == "TileMap":
 		moveFeet($Sections.get_child_count())
-		
+		velocity.y = -128
 		pass
 	pass # Replace with function body.

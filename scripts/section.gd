@@ -13,4 +13,5 @@ func _process(_delta):
 func _on_area_2d_body_entered(body):
 	if body.name == "TileMap":
 		player.moveFeet((position.y / 16) - 1)
+		player.velocity.y  = -128
 	pass # Replace with function body.
