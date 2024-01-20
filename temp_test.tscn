@@ -8,3 +8,9 @@
 position = Vector2(249, 203)
 rotation = 1.54904
 texture = ExtResource("1_ecova")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(299, 447)
+rotation = 3.09808
+scale = Vector2(1, 1)
+texture = ExtResource("1_ecova")
