@@ -24,27 +24,31 @@ func _physics_process(delta):
 	move_and_slide()
 
 func moveFeet(distance):
+	
 	$FootCollision.position.y = distance * 16
 	pass
 
 func spawnSection():
+	self.global_position.y -= 16
+	moveFeet($Sections.get_child_count() + 2)
 	var section = SECTION.instantiate()
 	$Sections.add_child(section)
 	section.global_position = self.global_position
-	section.position.y += heightCount * 16
-	section.index = heightCount
-	moveFeet(heightCount)
+	section.position.y += $Sections.get_child_count() * 16
+	section.index = $Sections.get_child_count()
 
-func breakAtSection(section):
-	heightCount = $Sections.get_child_count() - section.index - 1
-	$FootCollision.position = section.position - Vector2(0, 16)
-	for i in range(section.index - 1, $Sections.get_child_count()):
-		$Sections.get_child(i).queue_free()
-	pass
+
 
 func _on_growth_timer_timeout():
-	self.global_position.y -= 16
-	heightCount += 1
 	spawnSection()
+		
 	pass # Replace with function body.
 
+
+
+func _on_break_feet_body_entered(body):
+	if body.name == "TileMap":
+		moveFeet($Sections.get_child_count())
+		
+		pass
+	pass # Replace with function body.
