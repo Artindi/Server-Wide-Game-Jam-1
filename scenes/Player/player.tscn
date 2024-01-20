@@ -13,8 +13,10 @@ size = Vector2(4, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prye1"]
 size = Vector2(8, 3)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sections", "foot_collision")]
 script = ExtResource("1_30jw6")
+sections = NodePath("Sections")
+foot_collision = NodePath("FootCollision")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ka8wg")
@@ -44,5 +46,13 @@ texture = ExtResource("3_rhp3k")
 position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_prye1")
 
+[node name="DeathDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathDetector"]
+shape = SubResource("RectangleShape2D_74oul")
+
 [connection signal="timeout" from="growth_timer" to="." method="_on_growth_timer_timeout"]
 [connection signal="body_entered" from="FootCollision/BreakFeet" to="." method="_on_break_feet_body_entered"]
+[connection signal="body_entered" from="DeathDetector" to="." method="_on_death_detector_body_entered"]
