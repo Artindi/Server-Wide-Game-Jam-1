@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://2aa7gv0i0jdn"]
+[gd_scene load_steps=8 format=3 uid="uid://2aa7gv0i0jdn"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_30jw6"]
 [ext_resource type="Texture2D" uid="uid://ccdate2gbvrxf" path="res://assets/images/characters/head2.png" id="2_bvcnr"]
@@ -12,6 +12,9 @@ size = Vector2(4, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prye1"]
 size = Vector2(8, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5ii8"]
+size = Vector2(16, 11)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sections", "foot_collision", "headSprite", "footSprite")]
 script = ExtResource("1_30jw6")
@@ -53,7 +56,8 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathDetector"]
-shape = SubResource("RectangleShape2D_74oul")
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_h5ii8")
 
 [connection signal="timeout" from="growth_timer" to="." method="_on_growth_timer_timeout"]
 [connection signal="body_entered" from="FootCollision/BreakFeet" to="." method="_on_break_feet_body_entered"]
