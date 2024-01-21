@@ -1,6 +1,8 @@
 class_name SaveFile extends Resource
 # Level is the same as the level you are on
 @export var level = 1
+# Collected items, as an array
+@export var collection = []
 # Display Option Value is the variable for whether the screen is fullscreen or windowed
 @export var display_option_value = 0
 # Volume Variables  
