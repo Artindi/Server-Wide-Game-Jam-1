@@ -3,6 +3,9 @@ extends CharacterBody2D
 @export var foot_collision : CollisionShape2D
 @export var headSprite : Sprite2D
 @export var footSprite : Sprite2D
+@export var growth_timer : Timer
+
+@export var timer_seconds : float = 0.75
 
 var headWithLegs = preload("res://assets/images/characters/head1.png")
 var headWithoutLegs = preload("res://assets/images/characters/head2.png")
@@ -16,6 +19,9 @@ const SPEED = 32.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+func _ready() -> void:
+	growth_timer.wait_time = timer_seconds
+
 func _physics_process(delta) -> void:
 	
 	#This makes the sprite look right when the player is one block tall

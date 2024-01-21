@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://2aa7gv0i0jdn"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_30jw6"]
-[ext_resource type="Texture2D" uid="uid://ccdate2gbvrxf" path="res://assets/images/characters/head2.png" id="2_bvcnr"]
+[ext_resource type="Texture2D" uid="uid://dhdf0kvciesgo" path="res://assets/images/characters/head2.png" id="2_bvcnr"]
 [ext_resource type="Texture2D" uid="uid://bx4l3gcfffuib" path="res://assets/images/characters/Feet1.png" id="3_a0jy8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74oul"]
@@ -16,12 +16,14 @@ size = Vector2(8, 3)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5ii8"]
 size = Vector2(16, 11)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sections", "foot_collision", "headSprite", "footSprite")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sections", "foot_collision", "headSprite", "footSprite", "growth_timer")]
+collision_layer = 3
 script = ExtResource("1_30jw6")
 sections = NodePath("Sections")
 foot_collision = NodePath("FootCollision")
 headSprite = NodePath("Sprite2D")
 footSprite = NodePath("FootCollision/Sprite2D")
+growth_timer = NodePath("growth_timer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_bvcnr")
@@ -34,7 +36,7 @@ shape = SubResource("RectangleShape2D_74oul")
 zoom = Vector2(4, 4)
 
 [node name="growth_timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.75
 autostart = true
 
 [node name="Sections" type="Node2D" parent="."]
