@@ -1,0 +1,3 @@
+Collectables are saved under "SaveSystem.save_game.collection"
+
+Each collectable has a seperate flag. Don't forget to change the flag in the metadata to make each collectable unique.
