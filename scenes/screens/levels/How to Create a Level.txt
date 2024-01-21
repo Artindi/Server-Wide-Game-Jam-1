@@ -1,0 +1,10 @@
+If anyone wants to make a level right click on 'template.tscn' in the 'scenes/screens/levels' section and click 
+New Inherited Scene, make sure the level is in the same folder as the template, and name it level_x 
+(replace x with the level number). Then, change the main node name to Level x, and change the Next Level exported 
+variable in the objective node to be whatever level you are doing plus 1 or if you're not making the next level you could
+make it the same level. Then, go into level_select and add the level into 'array' and create a button for it 
+by duplicating the latest button (highest level). After that, you have to go into the Node section on the top right and 
+double click pressed() and connect it to Level Select then you can copy the 
+get_tree().change_scene_to_file("res://scenes/screens/levels/level_x.tscn") from another _on_button_pressed() function 
+and change x to whatever level you made. Then the level should be set up for use. You can add to the level, it will just 
+always have the player, tilemap, and objective. 

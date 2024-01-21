@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://kup4jkg8gow3"
-path="res://.godot/imported/Feet1.png-239c031add37dd4ce9b3bd092ab3685e.ctex"
+path="res://.godot/imported/Feet1.png-97e78ea04ccba0f58ed55c3582a6d89d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/screens/Feet1.png"
-dest_files=["res://.godot/imported/Feet1.png-239c031add37dd4ce9b3bd092ab3685e.ctex"]
+source_file="res://assets/images/characters/Feet1.png"
+dest_files=["res://.godot/imported/Feet1.png-97e78ea04ccba0f58ed55c3582a6d89d.ctex"]
 
 [params]
 
