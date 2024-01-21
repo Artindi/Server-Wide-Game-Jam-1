@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7rn47s3d7w5g"
-path="res://.godot/imported/Section2.png-133fbd2218bea28f3d29c575cc637b79.ctex"
+uid="uid://ci5p3t6docans"
+path="res://.godot/imported/Section2.png-a61b95dcba7ed754f9f460c2ce37267a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/characters/Section2.png"
-dest_files=["res://.godot/imported/Section2.png-133fbd2218bea28f3d29c575cc637b79.ctex"]
+source_file="res://scenes/screens/Section2.png"
+dest_files=["res://.godot/imported/Section2.png-a61b95dcba7ed754f9f460c2ce37267a.ctex"]
 
 [params]
 

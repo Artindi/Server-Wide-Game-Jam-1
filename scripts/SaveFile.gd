@@ -1,6 +1,6 @@
 class_name SaveFile extends Resource
-# Level is one less than the actual level (Ex. level = 2 means the player can go to level 3)
-@export var level = 0
+# Level is the same as the level you are on
+@export var level = 1
 # Display Option Value is the variable for whether the screen is fullscreen or windowed
 @export var display_option_value = 0
 # Volume Variables  

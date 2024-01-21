@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/screens/level_select.gd" id="1_d1hbr"]
 
-[node name="Level Select" type="Control" node_paths=PackedStringArray("level2", "level3", "level4", "level5", "level6", "level7")]
+[node name="Level Select" type="Control" node_paths=PackedStringArray("level1", "level2", "level3", "level4", "level5", "level6", "level7")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,6 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d1hbr")
+level1 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level1Button")
 level2 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level2Button")
 level3 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level3Button")
 level4 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level4Button")
@@ -89,4 +90,5 @@ text = "Back
 "
 
 [connection signal="pressed" from="VBoxContainer/ScrollContainer/VBoxContainer/Level1Button" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ScrollContainer/VBoxContainer/Level2Button" to="." method="_on_level_2_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
