@@ -1,0 +1,15 @@
+If you want to use the Save System use this to inform yourself on how it works.
+
+Use SaveSystem.saving() to save everything.
+Use SaveSystem.load_game() to load everything.
+Use SaveSystem.save_game.x to access a variable from SaveFile.gd (replace x with the variable you want to access).
+
+If you want to add a variable that saves, write it in SaveFile.gd
+
+If you want to create a variable for settings you have to make it be set in multiple places. In settings.gd, you have to
+make your variable set in the _on_visibilty_changed() function. Just make sure it's after SaveSystem.load_game().
+In SaveSystem, you have to call the function that's in SaveFile.gd in load_game(). You need to create a function in 
+SaveFile.gd to update the values and that needs to be called in an autoload script which SaveSystem.gd is. If you need
+any help ping me on discord.
+
+- Warlad (Warladd is my Github Username)

@@ -20,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.156863, 0, 0.627451, 1)
+color = Color(0.226708, 0.226707, 0.226707, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -145,6 +145,7 @@ theme_override_font_sizes/font_size = 35
 text = "Back"
 
 [connection signal="hidden" from="." to="." method="_on_hidden"]
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="item_selected" from="VBoxContainer/MarginContainer/VideoSettings/DisplayModeBtn" to="." method="_on_display_mode_btn_item_selected"]
 [connection signal="value_changed" from="VBoxContainer/MarginContainer2/AudioSettings/MasterVolSlider" to="." method="_on_master_vol_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/MarginContainer2/AudioSettings/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]

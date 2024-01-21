@@ -26,7 +26,9 @@ func _on_back_button_pressed() -> void:
 	SaveSystem.saving()
 	self.visible = false
 
-func _on_about_to_popup() -> void:
+func _on_visibility_changed() -> void:
+	if !visible:
+		return
 	SaveSystem.load_game()
 	display_options.selected = SaveSystem.save_game.display_option_value
 	master_vol.value = SaveSystem.save_game.master_vol_value
