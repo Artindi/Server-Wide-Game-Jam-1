@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqikijjdi8kxc"]
+
+[ext_resource type="Texture2D" uid="uid://b3g8g5042ulcl" path="res://assets/images/PrototypingConcrete.png" id="1_ha1d1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvvdx"]
+size = Vector2(16, 16)
+
+[node name="Concrete" type="StaticBody2D"]
+collision_layer = 33
+collision_mask = 33
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bvvdx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ha1d1")
