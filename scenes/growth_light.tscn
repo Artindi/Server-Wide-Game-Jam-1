@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c72oxlg3mepok"]
+
+[ext_resource type="Texture2D" uid="uid://bl14rd5lmyf1e" path="res://assets/images/PrototypingLight.png" id="1_sia4c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bs2cu"]
+size = Vector2(16, 16)
+
+[node name="GrowthLight" type="StaticBody2D"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bs2cu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sia4c")

@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxr680sag1irk"]
+
+[ext_resource type="PackedScene" uid="uid://bn6f7ca4bl2ie" path="res://scenes/screens/levels/template.tscn" id="1_binx7"]
+[ext_resource type="PackedScene" uid="uid://bqikijjdi8kxc" path="res://scenes/concrete.tscn" id="2_gmm40"]
+[ext_resource type="PackedScene" uid="uid://c72oxlg3mepok" path="res://scenes/growth_light.tscn" id="3_yavvm"]
+
+[node name="Template" instance=ExtResource("1_binx7")]
+
+[node name="Player" parent="." index="0"]
+position = Vector2(168, 51)
+
+[node name="TileMap" parent="." index="1"]
+layer_0/tile_data = PackedInt32Array(-65539, 196608, 0, -131065, 65536, 0, -131064, 131072, 0, -65540, 131072, 0, -65541, 131072, 0, -65542, 196608, 4, -131063, 131072, 0, -131062, 131072, 0, -131078, 0, 2, -196614, 0, 2, -262150, 0, 2, -327686, 0, 2, -393222, 0, 2, -458758, 0, 2, -524294, 0, 2, -589830, 0, 4, -655366, 0, 2, -720902, 0, 4, -786438, 0, 2, -851974, 0, 2, -917510, 0, 2, -983046, 0, 2, -1048582, 0, 2, -1114118, 0, 2, -1179654, 0, 2, -1245190, 0, 2, -1310726, 0, 2, -1376262, 0, 1, -393206, 131072, 0, -786422, 131072, 0, -131061, 131072, 0, -131060, 131072, 0, -131059, 131072, 0, -131058, 131072, 0, -131057, 131072, 0, -131056, 131072, 0, -131055, 131072, 0, -131054, 131072, 0, -131053, 131072, 0, -131052, 131072, 0, -131051, 131072, 0, -131050, 131072, 0, -131049, 131072, 0, -131048, 131072, 0, -131047, 131072, 0, -131046, 131072, 0, -131045, 131072, 0, -131044, 196608, 0, -393207, 131072, 0, -393205, 131072, 4, -720901, 131072, 0, -720900, 131072, 0, -720899, 131072, 0, -720898, 131072, 0, -720897, 131072, 0, -786432, 131072, 0, -786431, 131072, 0, -786430, 131072, 0, -786429, 131072, 0, -786428, 131072, 0, -786427, 131072, 0, -786426, 131072, 0, -786425, 131072, 0, -786424, 131072, 0, -786423, 131072, 0, -786421, 131072, 5, -720885, 0, 2, -655349, 0, 2, -589813, 0, 2, -524277, 0, 2, -458741, 0, 2, -393208, 196608, 4, -524280, 0, 1, -458744, 0, 2, -393219, 65536, 0, -393218, 131072, 0, -393217, 131072, 0, -458752, 196608, 0, -589829, 131072, 0, -589828, 196608, 0)
+
+[node name="Objective" parent="." index="2"]
+position = Vector2(361, 34)
+next_level = 1
+
+[node name="Concrete" parent="." index="4" instance=ExtResource("2_gmm40")]
+position = Vector2(189, 121)
+
+[node name="Concrete2" parent="." index="5" instance=ExtResource("2_gmm40")]
+position = Vector2(205, 121)
+
+[node name="Concrete3" parent="." index="6" instance=ExtResource("2_gmm40")]
+position = Vector2(221, 121)
+
+[node name="Concrete4" parent="." index="7" instance=ExtResource("2_gmm40")]
+position = Vector2(173, 121)
+
+[node name="Concrete5" parent="." index="8" instance=ExtResource("2_gmm40")]
+position = Vector2(157, 121)
+
+[node name="Concrete6" parent="." index="9" instance=ExtResource("2_gmm40")]
+position = Vector2(141, 121)
+
+[node name="Concrete7" parent="." index="10" instance=ExtResource("2_gmm40")]
+position = Vector2(125, 121)
+
+[node name="Concrete8" parent="." index="11" instance=ExtResource("2_gmm40")]
+position = Vector2(109, 121)
+
+[node name="Concrete9" parent="." index="12" instance=ExtResource("2_gmm40")]
+position = Vector2(93, 121)
+
+[node name="GrowthLight" parent="." index="13" instance=ExtResource("3_yavvm")]
+position = Vector2(125, 57)
+
+[node name="GrowthLight2" parent="." index="14" instance=ExtResource("3_yavvm")]
+position = Vector2(109, 57)
+
+[node name="GrowthLight3" parent="." index="15" instance=ExtResource("3_yavvm")]
+position = Vector2(93, 57)
+
+[node name="GrowthLight4" parent="." index="16" instance=ExtResource("3_yavvm")]
+position = Vector2(77, 57)
+
+[node name="GrowthLight5" parent="." index="17" instance=ExtResource("3_yavvm")]
+position = Vector2(61, 9)
+
+[node name="GrowthLight6" parent="." index="18" instance=ExtResource("3_yavvm")]
+position = Vector2(45, 9)
