@@ -1,4 +1,6 @@
 extends CharacterBody2D
+class_name Player
+
 @export var sections : Node2D
 @export var foot_collision : CollisionShape2D
 @export var headSprite : Sprite2D
@@ -12,10 +14,12 @@ var headWithoutLegs = preload("res://assets/images/characters/head2.png")
 var shortFootSprite = preload("res://assets/images/characters/Feet2.png")
 var tallFootSprite = preload("res://assets/images/characters/Feet1.png")
 
-
 var SECTION = preload("res://scenes/Player/section.tscn")
 
 const SPEED = 32.0
+
+#Misc variables
+var growthDirection : bool = true
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -51,6 +55,13 @@ func moveFeet(distance) -> void:
 	foot_collision.position.y = distance * 16
 	pass
 
+func removeSection() -> void:
+	if (sections.get_child_count() > 0):
+		self.global_position.y += 16
+		moveFeet(sections.get_child_count())
+	else:
+		get_tree().reload_current_scene()
+
 func spawnSection() -> void:
 	self.global_position.y -= 16
 	moveFeet(sections.get_child_count() + 2)
@@ -61,14 +72,18 @@ func spawnSection() -> void:
 	section.index = sections.get_child_count()
 
 func _on_growth_timer_timeout() -> void:
-	if sections.get_child_count() == 0:
-		if foot_collision.position.y == 0:
-			self.global_position.y -= 16
-			moveFeet(sections.get_child_count() + 1)
+	if (growthDirection):
+		if sections.get_child_count() == 0:
+			if foot_collision.position.y == 0:
+				self.global_position.y -= 16
+				moveFeet(sections.get_child_count() + 1)
+			else:
+				spawnSection()
 		else:
 			spawnSection()
+	
 	else:
-		spawnSection()
+		removeSection()
 
 func _on_break_feet_body_entered(body) -> void:
 	if body.name == "TileMap":
