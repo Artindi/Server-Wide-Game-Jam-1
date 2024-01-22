@@ -1,4 +1,6 @@
 extends CharacterBody2D
+class_name Player
+
 @export var sections : Node2D
 @export var foot_collision : CollisionShape2D
 @export var headSprite : Sprite2D
@@ -17,6 +19,8 @@ var SECTION = preload("res://scenes/Player/section.tscn")
 
 const SPEED = 64
 
+#Misc variables
+var growthDirection : bool = true
 var growth_speed = 1
 var can_grow = true
 
@@ -54,6 +58,13 @@ func moveFeet(distance) -> void:
 	foot_collision.position.y = distance * 16
 	pass
 
+func removeSection() -> void:
+	if (sections.get_child_count() > 0):
+		self.global_position.y += 16
+		moveFeet(sections.get_child_count())
+	else:
+		get_tree().reload_current_scene()
+
 func spawnSection() -> void:
 	self.global_position.y -= 16
 	moveFeet(sections.get_child_count() + 2)
@@ -85,14 +96,15 @@ func checkGrowthSpeed():
 func _on_growth_timer_timeout() -> void:
 	checkGrowthSpeed()
 	if can_grow:
-		if sections.get_child_count() == 0:
-			if foot_collision.position.y == 0:
-				self.global_position.y -= 16
-				moveFeet(sections.get_child_count() + 1)
+		if (growthDirection):
+			if sections.get_child_count() == 0:
+				if foot_collision.position.y == 0:
+					self.global_position.y -= 16
+					moveFeet(sections.get_child_count() + 1)
+				else:
+					spawnSection()
 			else:
-				spawnSection()
-		else:
-			spawnSection()
+				removeSection()
 
 func _on_break_feet_body_entered(body) -> void:
 	if body.name == "TileMap":
