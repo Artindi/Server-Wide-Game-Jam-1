@@ -15,7 +15,10 @@ var tallFootSprite = preload("res://assets/images/characters/Feet1.png")
 
 var SECTION = preload("res://scenes/Player/section.tscn")
 
-const SPEED = 32.0
+const SPEED = 64
+
+var growth_speed = 1
+var can_grow = true
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -60,15 +63,36 @@ func spawnSection() -> void:
 	section.position.y += sections.get_child_count() * 16
 	section.index = sections.get_child_count()
 
+#changes growth_timer speed based envornmental conditions
+func checkGrowthSpeed():
+	growth_speed = 1
+	if $FootCollision/ConcreteDetector.get_collider() != null:
+		if "Concrete" in $FootCollision/ConcreteDetector.get_collider().get_name():
+			growth_speed -= 1
+	if $GrowthLightDetection.get_collider() != null:
+		if "GrowthLight" in $GrowthLightDetection.get_collider().get_name():
+			growth_speed += 1
+	
+	if growth_speed == 0:
+		can_grow = false
+	elif growth_speed == 1:
+		can_grow = true
+		growth_timer.wait_time = 0.75
+	elif growth_speed == 2:
+		can_grow = true
+		growth_timer.wait_time = 0.25
+
 func _on_growth_timer_timeout() -> void:
-	if sections.get_child_count() == 0:
-		if foot_collision.position.y == 0:
-			self.global_position.y -= 16
-			moveFeet(sections.get_child_count() + 1)
+	checkGrowthSpeed()
+	if can_grow:
+		if sections.get_child_count() == 0:
+			if foot_collision.position.y == 0:
+				self.global_position.y -= 16
+				moveFeet(sections.get_child_count() + 1)
+			else:
+				spawnSection()
 		else:
 			spawnSection()
-	else:
-		spawnSection()
 
 func _on_break_feet_body_entered(body) -> void:
 	if body.name == "TileMap":
