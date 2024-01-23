@@ -30,7 +30,6 @@ func _ready() -> void:
 	growth_timer.wait_time = timer_seconds
 
 func _physics_process(delta) -> void:
-	print(sections.get_child_count())
 	#This makes the sprite look right when the player is one block tall
 	if foot_collision.position.y == 0:
 		headSprite.texture = headWithLegs

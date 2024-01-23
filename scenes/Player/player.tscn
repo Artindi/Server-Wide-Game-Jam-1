@@ -18,7 +18,7 @@ size = Vector2(8, 3)
 size = Vector2(16, 11)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sections", "foot_collision", "headSprite", "footSprite", "growth_timer")]
-collision_layer = 3
+collision_layer = 2
 script = ExtResource("1_30jw6")
 sections = NodePath("Sections")
 foot_collision = NodePath("FootCollision")
