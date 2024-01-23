@@ -25,7 +25,7 @@ func _physics_process(delta):
 	pass
 
 func _on_area_2d_body_entered(body):
-	if body.name == "TileMap":
+	if body.name == "TileMap" or "Concrete" in body.get_name():
 		player.moveFeet((position.y / 16) - 1)
 		player.velocity.y  = -128
 	pass # Replace with function body.

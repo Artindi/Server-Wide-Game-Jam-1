@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://c14i4xq6kgcf"]
+
+[ext_resource type="PackedScene" uid="uid://bn6f7ca4bl2ie" path="res://scenes/screens/levels/template.tscn" id="1_kukaf"]
+[ext_resource type="PackedScene" uid="uid://bqikijjdi8kxc" path="res://scenes/concrete.tscn" id="2_snnt3"]
+
+[node name="level_4" instance=ExtResource("1_kukaf")]
+
+[node name="Player" parent="." index="0"]
+position = Vector2(66, 86)
+
+[node name="TileMap" parent="." index="1"]
+layer_0/tile_data = PackedInt32Array(-65539, 131072, 0, -65538, 131072, 0, -65537, 131072, 0, -131072, 131072, 0, -131071, 196608, 0, -65540, 131072, 0, -65541, 131072, 0, -65542, 196608, 4, -131063, 65536, 0, -131062, 131072, 4, -131078, 0, 2, -196614, 0, 2, -262150, 0, 2, -327686, 0, 2, -393222, 0, 2, -458758, 0, 4, -524294, 0, 2, -589830, 0, 2, -655366, 0, 2, -720902, 0, 2, -786438, 0, 2, -851974, 0, 2, -917510, 0, 2, -983046, 0, 2, -1048582, 0, 2, -1114118, 0, 2, -1179654, 0, 2, -1245190, 0, 2, -1310726, 0, 2, -1376262, 0, 1, -196598, 0, 2, -262134, 0, 2, -327670, 0, 2, -393206, 0, 2, -458742, 0, 2, -524278, 0, 2, -589814, 0, 2, -655350, 0, 2, -720886, 0, 2, -786422, 65536, 4, -917494, 0, 2, -851958, 0, 2, -983030, 0, 2, -1048566, 0, 2, -1114102, 0, 2, -1310710, 0, 2, -1376246, 0, 2, -1441782, 0, 1, -1179638, 0, 2, -1245174, 0, 2, -458757, 131072, 0, -458756, 131072, 0, -458755, 131072, 0, -458754, 131072, 0, -458753, 131072, 0, -524288, 131072, 0, -524287, 196608, 0, -786423, 131072, 0, -786424, 131072, 0, -786425, 131072, 0, -786426, 131072, 0, -786427, 131072, 0, -786428, 131072, 0, -786429, 131072, 0, -786430, 65536, 0)
+
+[node name="Objective" parent="." index="2"]
+position = Vector2(91, -35)
+next_level = 5
+
+[node name="Concrete" parent="." index="5" instance=ExtResource("2_snnt3")]
+position = Vector2(157, 121)
+
+[node name="Concrete2" parent="." index="6" instance=ExtResource("2_snnt3")]
+position = Vector2(173, 121)
+
+[node name="Concrete3" parent="." index="7" instance=ExtResource("2_snnt3")]
+position = Vector2(189, 121)
+
+[node name="Concrete4" parent="." index="8" instance=ExtResource("2_snnt3")]
+position = Vector2(205, 121)
+
+[node name="Concrete5" parent="." index="9" instance=ExtResource("2_snnt3")]
+position = Vector2(221, 121)
+
+[node name="Concrete6" parent="." index="10" instance=ExtResource("2_snnt3")]
+position = Vector2(237, 121)
+
+[node name="Concrete7" parent="." index="11" instance=ExtResource("2_snnt3")]
+position = Vector2(253, 121)
+
+[node name="Concrete8" parent="." index="12" instance=ExtResource("2_snnt3")]
+position = Vector2(301, 119)
