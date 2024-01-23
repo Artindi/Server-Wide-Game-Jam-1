@@ -21,7 +21,7 @@ const SPEED = 64
 
 #Misc variables
 var growthDirection : bool = true
-var growth_speed = 1
+var grow_speed = 1
 var can_grow = true
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -30,7 +30,7 @@ func _ready() -> void:
 	growth_timer.wait_time = timer_seconds
 
 func _physics_process(delta) -> void:
-	
+	print(sections.get_child_count())
 	#This makes the sprite look right when the player is one block tall
 	if foot_collision.position.y == 0:
 		headSprite.texture = headWithLegs
@@ -75,28 +75,28 @@ func spawnSection() -> void:
 	section.index = sections.get_child_count()
 
 #changes growth_timer speed based envornmental conditions
-func checkGrowthSpeed():
-	growth_speed = 1
+func checkGrowSpeed():
+	grow_speed = 1
 	if $FootCollision/ConcreteDetector.get_collider() != null:
 		if "Concrete" in $FootCollision/ConcreteDetector.get_collider().get_name():
-			growth_speed -= 1
+			grow_speed -= 1
 	if $GrowthLightDetection.get_collider() != null:
 		if "GrowthLight" in $GrowthLightDetection.get_collider().get_name():
-			growth_speed += 1
+			grow_speed += 1
 	
-	if growth_speed == 0:
+	if grow_speed == 0:
 		can_grow = false
-	elif growth_speed == 1:
+	elif grow_speed == 1:
 		can_grow = true
 		growth_timer.wait_time = 0.75
-	elif growth_speed == 2:
+	elif grow_speed == 2:
 		can_grow = true
 		growth_timer.wait_time = 0.25
 
 func _on_growth_timer_timeout() -> void:
-	checkGrowthSpeed()
-	if can_grow:
-		if (growthDirection):
+	if (growthDirection):
+		checkGrowSpeed()
+		if can_grow:
 			if sections.get_child_count() == 0:
 				if foot_collision.position.y == 0:
 					self.global_position.y -= 16
@@ -104,7 +104,9 @@ func _on_growth_timer_timeout() -> void:
 				else:
 					spawnSection()
 			else:
-				removeSection()
+				spawnSection()
+	else:
+		removeSection()
 
 func _on_break_feet_body_entered(body) -> void:
 	if body.name == "TileMap":
