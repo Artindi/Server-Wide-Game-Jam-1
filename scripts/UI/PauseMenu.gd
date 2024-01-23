@@ -6,15 +6,15 @@ func _ready() -> void:
 	settings.visible = false
 	visible = false
 
-func _physics_process(_delta) -> void:
-	get_tree().paused = visible
 
 func _input(event) -> void:
 	if (event.is_action_pressed("Esc")):
 		visible = !visible
+		get_tree().paused = visible
 
 func _on_continue_button_pressed() -> void:
 	visible = false
+	get_tree().paused = false
 
 func _on_settings_button_pressed() -> void:
 	settings.visible = true

@@ -1,3 +1,5 @@
 Collectables are saved under "SaveSystem.save_game.collection"
 
 Each collectable has a seperate flag. Don't forget to change the flag in the metadata to make each collectable unique.
+
+In each level, drag each collectable into the exported array in the win_screen in order for it to count them.
