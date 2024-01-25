@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://blfpxlhxw4is2"]
+[gd_scene load_steps=4 format=3 uid="uid://blfpxlhxw4is2"]
 
 [ext_resource type="Script" path="res://scripts/settings.gd" id="2_o4kiu"]
+[ext_resource type="FontFile" uid="uid://gjss8fmy13x2" path="res://assets/fonts/dpcomic.ttf" id="2_v4u6t"]
+
+[sub_resource type="Theme" id="Theme_ngole"]
+default_font = ExtResource("2_v4u6t")
 
 [node name="Settings" type="Control" node_paths=PackedStringArray("display_options", "master_vol", "music_vol", "sfx_vol")]
 layout_mode = 3
@@ -29,6 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_ngole")
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -129,19 +134,22 @@ value = -15.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -45.0
-offset_top = -40.0
-grow_horizontal = 0
+offset_left = -41.5
+offset_top = -71.735
+offset_right = 41.5
+offset_bottom = -26.735
+grow_horizontal = 2
 grow_vertical = 0
 
 [node name="BackButton" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 35
+theme_override_fonts/font = ExtResource("2_v4u6t")
+theme_override_font_sizes/font_size = 40
 text = "Back"
 
 [connection signal="hidden" from="." to="." method="_on_hidden"]
