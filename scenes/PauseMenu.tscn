@@ -8,18 +8,13 @@ process_mode = 3
 script = ExtResource("1_0js27")
 settings = NodePath("Settings")
 
-[node name="Panel" type="Panel" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -158.0
-offset_top = -200.0
-offset_right = 161.0
-offset_bottom = 173.0
+[node name="Panel" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.356863, 0.356863, 0.356863, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1

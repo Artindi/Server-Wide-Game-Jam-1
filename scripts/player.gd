@@ -6,6 +6,8 @@ class_name Player
 @export var headSprite : Sprite2D
 @export var footSprite : Sprite2D
 @export var growth_timer : Timer
+@export var concrete_detector : RayCast2D
+@export var growth_light_detector : RayCast2D
 
 @export var timer_seconds : float = 0.75
 
@@ -76,11 +78,11 @@ func spawnSection() -> void:
 #changes growth_timer speed based envornmental conditions
 func checkGrowSpeed():
 	grow_speed = 1
-	if $FootCollision/ConcreteDetector.get_collider() != null:
-		if "Concrete" in $FootCollision/ConcreteDetector.get_collider().get_name():
-			grow_speed -= 1
-	if $GrowthLightDetection.get_collider() != null:
-		if "GrowthLight" in $GrowthLightDetection.get_collider().get_name():
+	if concrete_detector.get_collider() != null:
+		#if "Concrete" in concrete_detector.get_collider().get_name():
+		grow_speed -= 1
+	if growth_light_detector.get_collider() != null:
+		if "GrowthLight" in growth_light_detector.get_collider().get_name():
 			grow_speed += 1
 	
 	if grow_speed == 0:
