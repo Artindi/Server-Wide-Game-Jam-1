@@ -17,14 +17,16 @@ size = Vector2(8, 3)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5ii8"]
 size = Vector2(16, 11)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sections", "foot_collision", "headSprite", "footSprite", "growth_timer")]
-collision_layer = 2
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sections", "foot_collision", "headSprite", "footSprite", "growth_timer", "concrete_detector", "growth_light_detector")]
+collision_layer = 3
 script = ExtResource("1_30jw6")
 sections = NodePath("Sections")
 foot_collision = NodePath("FootCollision")
 headSprite = NodePath("Sprite2D")
 footSprite = NodePath("FootCollision/Sprite2D")
 growth_timer = NodePath("growth_timer")
+concrete_detector = NodePath("FootCollision/ConcreteDetector")
+growth_light_detector = NodePath("GrowthLightDetection")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_bvcnr")
@@ -60,7 +62,7 @@ shape = SubResource("RectangleShape2D_prye1")
 [node name="ConcreteDetector" type="RayCast2D" parent="FootCollision"]
 position = Vector2(0, 6)
 target_position = Vector2(0, 96)
-collision_mask = 33
+collision_mask = 32
 
 [node name="DeathDetector" type="Area2D" parent="."]
 collision_layer = 0
@@ -72,7 +74,7 @@ shape = SubResource("RectangleShape2D_h5ii8")
 
 [node name="GrowthLightDetection" type="RayCast2D" parent="."]
 target_position = Vector2(0, -96)
-collision_mask = 33
+collision_mask = 32
 
 [connection signal="timeout" from="growth_timer" to="." method="_on_growth_timer_timeout"]
 [connection signal="body_entered" from="FootCollision/BreakFeet" to="." method="_on_break_feet_body_entered"]

@@ -20,4 +20,3 @@ func appear(path):
 func _on_continue_button_pressed():
 	get_tree().paused = false
 	get_tree().change_scene_to_file(next_scene)
-	pass # Replace with function body.

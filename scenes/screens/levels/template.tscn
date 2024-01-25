@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://bn6f7ca4bl2ie"]
 
-[ext_resource type="PackedScene" uid="uid://2aa7gv0i0jdn" path="res://scenes/Player/player.tscn" id="1_cc1pa"]
+[ext_resource type="PackedScene" uid="uid://2aa7gv0i0jdn" path="res://scenes/player/player.tscn" id="1_cc1pa"]
 [ext_resource type="Script" path="res://scripts/levels.gd" id="1_vjdaw"]
 [ext_resource type="PackedScene" uid="uid://bvv4mkgjx64bs" path="res://scenes/tile_map.tscn" id="2_42e5c"]
 [ext_resource type="PackedScene" uid="uid://kujf2anccf0p" path="res://scenes/objective.tscn" id="3_vs26j"]
 [ext_resource type="PackedScene" uid="uid://c8x4r74ym7o3q" path="res://scenes/PauseMenu.tscn" id="5_s4wam"]
-[ext_resource type="PackedScene" uid="uid://c8f5uu1taytdb" path="res://scenes/screens/win_screen.tscn" id="6_u3y3s"]
+[ext_resource type="PackedScene" uid="uid://cxqqdmwe1qd68" path="res://scenes/screens/win_screen.tscn" id="6_u3y3s"]
 
 [node name="Template" type="Node2D"]
 script = ExtResource("1_vjdaw")
