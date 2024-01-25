@@ -11,11 +11,11 @@ class_name Player
 
 @export var timer_seconds : float = 0.75
 
-var headWithLegs = preload("res://assets/images/characters/head1.png")
-var headWithoutLegs = preload("res://assets/images/characters/head2.png")
-var shortFootSprite = preload("res://assets/images/characters/Feet2.png")
-var tallFootSprite = preload("res://assets/images/characters/Feet1.png")
-
+var headWithLegs = preload("res://assets/images/characters/Pot.png")
+var headWithoutLegs = preload("res://assets/images/characters/Pot_with_green.png")
+var tallFootSprite = preload("res://assets/images/characters/legs_with_green.png")
+var shortFootSprite = preload("res://assets/images/characters/legs.png")
+var camera = preload("res://scenes/Player/Custom_camera.tscn")
 
 var SECTION = preload("res://scenes/Player/section.tscn")
 

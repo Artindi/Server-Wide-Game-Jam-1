@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8x4r74ym7o3q"]
+[gd_scene load_steps=5 format=3 uid="uid://c8x4r74ym7o3q"]
 
 [ext_resource type="Script" path="res://scripts/UI/PauseMenu.gd" id="1_0js27"]
+[ext_resource type="FontFile" uid="uid://gjss8fmy13x2" path="res://assets/fonts/dpcomic.ttf" id="2_keilr"]
 [ext_resource type="PackedScene" uid="uid://blfpxlhxw4is2" path="res://scenes/screens/settings.tscn" id="2_nooot"]
+
+[sub_resource type="Theme" id="Theme_644qr"]
+default_font = ExtResource("2_keilr")
 
 [node name="UI" type="CanvasLayer" node_paths=PackedStringArray("settings")]
 process_mode = 3
@@ -14,7 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.356863, 0.356863, 0.356863, 1)
+color = Color(0.356863, 0.356863, 0.356863, 0.0156863)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -29,26 +33,27 @@ offset_right = 154.5
 offset_bottom = 106.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_644qr")
 
 [node name="ContinueButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "Continue"
 
 [node name="SettingsButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "Settings"
 
 [node name="QuitButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Quit to Main Menu"
+theme_override_font_sizes/font_size = 40
+text = "Main Menu"
 
 [node name="QuitButton2" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Quit to Desktop"
+theme_override_font_sizes/font_size = 40
+text = "Quit"
 
 [node name="Settings" parent="." instance=ExtResource("2_nooot")]
 process_mode = 3

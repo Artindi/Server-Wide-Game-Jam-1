@@ -5,9 +5,9 @@ var rng = RandomNumberGenerator.new
 var index = 0
 @onready var player = get_parent().get_parent()
 
-var texture1 = preload("res://assets/images/characters/Section1.png")
-var texture2 = preload("res://assets/images/characters/Section2.png")
-var texture3 = preload("res://assets/images/characters/Section3.png")
+var texture1 = preload("res://assets/images/characters/sect1.png")
+var texture2 = preload("res://assets/images/characters/sect2.png")
+var texture3 = preload("res://assets/images/characters/sect3.png")
 
 func _ready():
 	randomize()
