@@ -1,9 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://c45qgpu3vwxop"]
+[gd_scene load_steps=15 format=3 uid="uid://c45qgpu3vwxop"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_jxads"]
-[ext_resource type="Texture2D" uid="uid://dj71t5fs1erlb" path="res://assets/images/title_screen.png" id="2_5ynko"]
 [ext_resource type="PackedScene" uid="uid://blfpxlhxw4is2" path="res://scenes/screens/settings.tscn" id="2_b6po7"]
 [ext_resource type="FontFile" uid="uid://gjss8fmy13x2" path="res://assets/fonts/dpcomic.ttf" id="2_ewkas"]
+[ext_resource type="Texture2D" uid="uid://cr3vl6iyof43d" path="res://assets/images/title_screen_1.png" id="2_jfgor"]
+[ext_resource type="Texture2D" uid="uid://bhafxghjf01co" path="res://assets/images/title_screen_2.png" id="3_brsho"]
+[ext_resource type="Texture2D" uid="uid://b0ki3yaqrkum2" path="res://assets/images/title_screen_1_1.png" id="3_yst47"]
+[ext_resource type="Texture2D" uid="uid://bfb18xrbmgfc" path="res://assets/images/title_screen_3.png" id="4_q4rlj"]
+[ext_resource type="Texture2D" uid="uid://denc7h0dxp3ih" path="res://assets/images/title_screen_2_1.png" id="5_liw5k"]
+[ext_resource type="Texture2D" uid="uid://bs36wolly2u2v" path="res://assets/images/title_screen_4.png" id="5_mu8np"]
+[ext_resource type="Texture2D" uid="uid://2n17jsqjvtdc" path="res://assets/images/title_screen_5.png" id="6_6fhqd"]
+[ext_resource type="Texture2D" uid="uid://c6sj7xjyxm4vj" path="res://assets/images/title_screen_3_1.png" id="7_8m21m"]
+[ext_resource type="Texture2D" uid="uid://dja17skcysvvv" path="res://assets/images/title_screen_4_1.png" id="9_qt7me"]
+[ext_resource type="Script" path="res://scripts/UI/menu_camera.gd" id="9_rbwre"]
 
 [sub_resource type="Theme" id="Theme_nf1io"]
 default_font = ExtResource("2_ewkas")
@@ -17,15 +26,95 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jxads")
-settings = NodePath("Settings")
+settings = NodePath("CanvasLayer/Settings")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(640, 360)
-scale = Vector2(4.011, 4)
-texture = ExtResource("2_5ynko")
+scale = Vector2(4, 4)
+texture = ExtResource("2_jfgor")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
+position = Vector2(640, 360)
+scale = Vector2(4, 4)
+texture = ExtResource("3_yst47")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(640, 360)
+scale = Vector2(4, 4)
+texture = ExtResource("3_brsho")
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
+position = Vector2(640, 360)
+scale = Vector2(4, 4)
+texture = ExtResource("5_liw5k")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.4, 0.4)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(640, 360)
+scale = Vector2(4, 4)
+texture = ExtResource("4_q4rlj")
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer8"]
+position = Vector2(640, 360)
+scale = Vector2(4, 4)
+texture = ExtResource("7_8m21m")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(640, 360)
+scale = Vector2(4, 4)
+texture = ExtResource("5_mu8np")
+
+[node name="ParallaxLayer9" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.7, 0.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
+position = Vector2(640, 360)
+scale = Vector2(4, 4)
+texture = ExtResource("9_qt7me")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2(640, 360)
+scale = Vector2(4, 4)
+texture = ExtResource("6_6fhqd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+limit_left = -120
+limit_top = -60
+limit_right = 1400
+limit_bottom = 780
+limit_smoothed = true
+position_smoothing_enabled = true
+editor_draw_limits = true
+script = ExtResource("9_rbwre")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -36,27 +125,26 @@ offset_bottom = 262.0
 grow_vertical = 2
 theme = SubResource("Theme_nf1io")
 
-[node name="PlayButton" type="Button" parent="VBoxContainer"]
+[node name="PlayButton" type="Button" parent="CanvasLayer/VBoxContainer"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Play"
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="CanvasLayer/VBoxContainer"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Settings"
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
+[node name="QuitButton" type="Button" parent="CanvasLayer/VBoxContainer"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Quit"
 
-[node name="Settings" parent="." instance=ExtResource("2_b6po7")]
+[node name="Settings" parent="CanvasLayer" instance=ExtResource("2_b6po7")]
 visible = false
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -65,6 +153,6 @@ offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

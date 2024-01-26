@@ -2,10 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_30jw6"]
 [ext_resource type="Texture2D" uid="uid://cxy7f2e0t6ats" path="res://assets/images/characters/Pot_with_green.png" id="2_pjr2x"]
+[ext_resource type="Texture2D" uid="uid://bugdu4mvraxsk" path="res://assets/images/light.png" id="3_hhgq3"]
 [ext_resource type="Texture2D" uid="uid://thmliibhs7io" path="res://assets/images/characters/legs_with_green.png" id="3_stl5i"]
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wov8q"]
-polygon = PackedVector2Array(-8, 0, -7, -3, -7, -6, -4, -6, -4, -8, 0, -8, 4, -8, 4, -6, 7, -6, 7, -3, 8, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74oul"]
 size = Vector2(16, 13)
@@ -33,8 +31,11 @@ growth_light_detector = NodePath("GrowthLightDetection")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_pjr2x")
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
-occluder = SubResource("OccluderPolygon2D_wov8q")
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+scale = Vector2(0.094, 0.094)
+energy = 0.4
+shadow_enabled = true
+texture = ExtResource("3_hhgq3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)
