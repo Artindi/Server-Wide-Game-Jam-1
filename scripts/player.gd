@@ -79,8 +79,8 @@ func spawnSection() -> void:
 func checkGrowSpeed():
 	grow_speed = 1
 	if concrete_detector.get_collider() != null:
-		#if "Concrete" in concrete_detector.get_collider().get_name():
-		grow_speed -= 1
+		if "Concrete" in concrete_detector.get_collider().get_name():
+			grow_speed -= 1
 	if growth_light_detector.get_collider() != null:
 		if "GrowthLight" in growth_light_detector.get_collider().get_name():
 			grow_speed += 1
@@ -113,6 +113,13 @@ func _on_break_feet_body_entered(body) -> void:
 	if body.name == "TileMap":
 		moveFeet(sections.get_child_count())
 		velocity.y = -128
+		
+func _on_break_feet_area_entered(area):
+	if "Saw" in area.get_name():
+		moveFeet(sections.get_child_count())
+		velocity.y = -128
+	pass # Replace with function body.
 
 func _on_death_detector_body_entered(_body) -> void:
 	get_tree().reload_current_scene()
+
