@@ -4,5 +4,10 @@
 
 [node name="Camera2D" type="Camera2D"]
 zoom = Vector2(4, 4)
+limit_left = -200
+limit_top = -200
+limit_right = 200
+limit_bottom = 200
 position_smoothing_enabled = true
+editor_draw_limits = true
 script = ExtResource("1_ebjsx")

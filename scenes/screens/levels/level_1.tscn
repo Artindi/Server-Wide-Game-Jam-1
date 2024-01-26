@@ -35,6 +35,4 @@ zoom = Vector2(3.5, 3.5)
 limit_left = -105
 limit_top = -369
 limit_right = 461
-limit_bottom = 200
 position_smoothing_speed = 2.0
-editor_draw_limits = true
