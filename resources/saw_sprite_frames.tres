@@ -1,60 +1,32 @@
-[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://bppo1xqyg0nww"]
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://bppo1xqyg0nww"]
 
 [ext_resource type="Texture2D" uid="uid://dfx4bw0je4ubh" path="res://assets/images/saw.png" id="1_pgfaq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fdl4p"]
-atlas = ExtResource("1_pgfaq")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4t1e5"]
-atlas = ExtResource("1_pgfaq")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tmyke"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfsey"]
 atlas = ExtResource("1_pgfaq")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7d37x"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_200cv"]
 atlas = ExtResource("1_pgfaq")
 region = Rect2(48, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kyw7j"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wwco"]
 atlas = ExtResource("1_pgfaq")
 region = Rect2(64, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iq8qk"]
-atlas = ExtResource("1_pgfaq")
-region = Rect2(80, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d1mmu"]
-atlas = ExtResource("1_pgfaq")
-region = Rect2(96, 0, 16, 16)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fdl4p")
+"texture": SubResource("AtlasTexture_qfsey")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4t1e5")
+"texture": SubResource("AtlasTexture_200cv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tmyke")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7d37x")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kyw7j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iq8qk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d1mmu")
+"texture": SubResource("AtlasTexture_1wwco")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
 }]
