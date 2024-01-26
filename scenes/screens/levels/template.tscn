@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bn6f7ca4bl2ie"]
 
-[ext_resource type="PackedScene" uid="uid://2aa7gv0i0jdn" path="res://scenes/player/player.tscn" id="1_cc1pa"]
+[ext_resource type="PackedScene" uid="uid://2aa7gv0i0jdn" path="res://scenes/Player/player.tscn" id="1_cc1pa"]
 [ext_resource type="Script" path="res://scripts/levels.gd" id="1_vjdaw"]
 [ext_resource type="PackedScene" uid="uid://bvv4mkgjx64bs" path="res://scenes/tile_map.tscn" id="2_42e5c"]
 [ext_resource type="PackedScene" uid="uid://kujf2anccf0p" path="res://scenes/objective.tscn" id="3_vs26j"]
@@ -10,12 +10,7 @@
 [node name="Template" type="Node2D"]
 script = ExtResource("1_vjdaw")
 
-[node name="Player" parent="." instance=ExtResource("1_cc1pa")]
-position = Vector2(158, 90)
-
-[node name="TileMap" parent="." instance=ExtResource("2_42e5c")]
-position = Vector2(117, 145)
-layer_0/tile_data = PackedInt32Array(-65539, 131072, 0, -65538, 131072, 0, -65537, 131072, 0, -131072, 131072, 0, -131071, 131072, 0, -131070, 131072, 0, -131069, 131072, 0, -131068, 131072, 0, -131067, 131072, 0, -131066, 131072, 0, -131065, 131072, 0, -131064, 131072, 0, -65540, 131072, 0, -65541, 131072, 0, -65542, 196608, 4, -131063, 131072, 0, -131062, 131072, 4, -131078, 0, 2, -196614, 0, 2, -262150, 0, 2, -327686, 0, 2, -393222, 0, 2, -458758, 0, 2, -524294, 0, 2, -589830, 0, 2, -655366, 0, 2, -720902, 0, 2, -786438, 0, 2, -851974, 0, 2, -917510, 0, 2, -983046, 0, 2, -1048582, 0, 2, -1114118, 0, 2, -1179654, 0, 2, -1245190, 0, 2, -1310726, 0, 2, -1376262, 0, 1, -196598, 0, 2, -262134, 0, 2, -327670, 0, 2, -393206, 0, 2, -458742, 0, 2, -524278, 0, 2, -589814, 0, 2, -655350, 0, 2, -720886, 0, 2, -786422, 0, 2, -917494, 0, 2, -851958, 0, 2, -983030, 0, 2, -1048566, 0, 2, -1114102, 0, 2, -1310710, 0, 2, -1376246, 0, 2, -1441782, 0, 1, -1179638, 0, 2, -1245174, 0, 2)
+[node name="decoration for bg" parent="." instance=ExtResource("2_42e5c")]
 
 [node name="Objective" parent="." node_paths=PackedStringArray("win_screen") instance=ExtResource("3_vs26j")]
 position = Vector2(160, -185)
@@ -27,3 +22,8 @@ visible = false
 
 [node name="Win Screen" parent="." instance=ExtResource("6_u3y3s")]
 visible = false
+
+[node name="Player" parent="." instance=ExtResource("1_cc1pa")]
+position = Vector2(158, 90)
+
+[node name="TileMap" parent="." instance=ExtResource("2_42e5c")]

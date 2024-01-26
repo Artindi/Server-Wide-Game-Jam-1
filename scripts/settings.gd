@@ -25,6 +25,7 @@ func _on_sfx_vol_slider_value_changed(value) -> void:
 func _on_back_button_pressed() -> void:
 	SaveSystem.saving()
 	self.visible = false
+	$"../../Camera2D".set_process(true)
 
 func _on_visibility_changed() -> void:
 	if !visible:
