@@ -73,7 +73,7 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_h5ii8")
 
 [node name="GrowthLightDetection" type="RayCast2D" parent="."]
-target_position = Vector2(0, -96)
+target_position = Vector2(0, -1000)
 collision_mask = 33
 
 [connection signal="timeout" from="growth_timer" to="." method="_on_growth_timer_timeout"]

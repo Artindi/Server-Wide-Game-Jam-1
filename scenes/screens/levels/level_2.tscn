@@ -1,36 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://wfu0s1idm1ep"]
+[gd_scene load_steps=5 format=3 uid="uid://wfu0s1idm1ep"]
 
 [ext_resource type="PackedScene" uid="uid://bn6f7ca4bl2ie" path="res://scenes/screens/levels/template.tscn" id="1_kbedu"]
-[ext_resource type="Texture2D" uid="uid://cr8ur55lid8re" path="res://assets/images/bg_level_2_3.png" id="2_1ab2l"]
 [ext_resource type="PackedScene" uid="uid://cxqqdmwe1qd68" path="res://scenes/screens/win_screen.tscn" id="2_6i7yu"]
-[ext_resource type="Texture2D" uid="uid://df1gra8drlwi" path="res://assets/images/bg_level_2_1.png" id="2_jfku7"]
+[ext_resource type="PackedScene" uid="uid://j4mbimua5ljl" path="res://resources/parallax_background.tscn" id="2_sdgfv"]
 [ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/Player/Custom_camera.tscn" id="3_5ulcc"]
-[ext_resource type="Texture2D" uid="uid://b1i1485klgejb" path="res://assets/images/bg_level_2_2.png" id="3_r2qff"]
 
 [node name="Level 2" instance=ExtResource("1_kbedu")]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
-visible = false
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
-motion_scale = Vector2(0, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" index="0"]
-position = Vector2(128, 24)
-texture = ExtResource("2_1ab2l")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" index="1"]
-motion_scale = Vector2(0.5, 0.5)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" index="0"]
-position = Vector2(128, 24)
-texture = ExtResource("3_r2qff")
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" index="2"]
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3" index="0"]
-position = Vector2(128, 24)
-texture = ExtResource("2_jfku7")
+[node name="ParallaxBackground" parent="." index="0" instance=ExtResource("2_sdgfv")]
 
 [node name="decoration for bg" parent="." index="1"]
 position = Vector2(8, 0)
@@ -55,8 +32,9 @@ layer_1/tile_data = PackedInt32Array(-196589, 917506, 17, -131053, 917506, 18, -
 layer_2/tile_data = PackedInt32Array(-1048565, 917506, 19, -983029, 917506, 20, -1048564, 983042, 19, -983028, 983042, 20)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="8"]
-rotation = 0.48237
-energy = 0.3
+rotation = 0.393306
+energy = 0.2
+range_layer_min = -500
 shadow_enabled = true
 
 [node name="Camera2D" parent="." index="9" instance=ExtResource("3_5ulcc")]
