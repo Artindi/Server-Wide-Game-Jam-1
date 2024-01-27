@@ -52,6 +52,12 @@ func _physics_process(delta) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	#this fixes a bug that causes the plant to break when standing on an edge
+	if velocity.x == 0:
+		$FootCollision.shape.size.x = 6
+	else:
+		$FootCollision.shape.size.x = 4
 
 	move_and_slide()
 
