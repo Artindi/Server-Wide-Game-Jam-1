@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dxklqc14ijc7t" path="res://assets/images/bg_level_1.png" id="2_pjsbr"]
 [ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/Player/Custom_camera.tscn" id="2_tgaxo"]
 
-[node name="level_1" instance=ExtResource("1_fxg4g")]
+[node name="Level 1" instance=ExtResource("1_fxg4g")]
 
 [node name="bg" type="Sprite2D" parent="." index="0"]
 position = Vector2(172, -177)

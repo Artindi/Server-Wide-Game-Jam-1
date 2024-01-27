@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vaqgp"]
 size = Vector2(112, 15)
 
-[node name="level_4" instance=ExtResource("1_kukaf")]
+[node name="Level 4" instance=ExtResource("1_kukaf")]
 
 [node name="Objective" parent="." index="1"]
 position = Vector2(80, -200)

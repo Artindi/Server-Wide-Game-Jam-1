@@ -43,7 +43,7 @@ _data = {
 "collectable-hover": SubResource("Animation_e36iv")
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="Collectible" type="Node2D"]
 metadata/flag = "test"
 
 [node name="Area2D" type="Area2D" parent="."]

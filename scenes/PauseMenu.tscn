@@ -40,6 +40,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Continue"
 
+[node name="ResetButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Reset Level"
+
 [node name="SettingsButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
@@ -67,6 +72,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [connection signal="pressed" from="Panel/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/QuitButton2" to="." method="_on_quit_button_2_pressed"]
