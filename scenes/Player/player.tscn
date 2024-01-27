@@ -61,7 +61,7 @@ shape = SubResource("RectangleShape2D_prye1")
 
 [node name="ConcreteDetector" type="RayCast2D" parent="FootCollision"]
 position = Vector2(0, 6)
-target_position = Vector2(0, 96)
+target_position = Vector2(0, 1000)
 collision_mask = 33
 
 [node name="DeathDetector" type="Area2D" parent="."]
