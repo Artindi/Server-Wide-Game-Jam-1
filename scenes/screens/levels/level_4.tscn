@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/Player/Custom_camera.tscn" id="2_r0o1j"]
 [ext_resource type="PackedScene" uid="uid://bdkgiqelqw5du" path="res://scenes/concrete_tile_map.tscn" id="3_yrwpa"]
 
-[node name="level_4" instance=ExtResource("1_kukaf")]
+[node name="Level 4" instance=ExtResource("1_kukaf")]
 
 [node name="Objective" parent="." index="1"]
 position = Vector2(80, -200)
