@@ -11,7 +11,7 @@ polygon = PackedVector2Array(-4, -8, -4, -6, -7, -6, -7, -3, -8, -3, -8, 0, 8, 0
 size = Vector2(16, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjgpk"]
-size = Vector2(4, 16)
+size = Vector2(4, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prye1"]
 size = Vector2(6, 3)
@@ -47,13 +47,15 @@ autostart = true
 [node name="Sections" type="Node2D" parent="."]
 
 [node name="FootCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 16)
+position = Vector2(0, 17)
 shape = SubResource("RectangleShape2D_rjgpk")
 
 [node name="Sprite2D" type="Sprite2D" parent="FootCollision"]
+position = Vector2(0, -1)
 texture = ExtResource("3_stl5i")
 
 [node name="BreakFeet" type="Area2D" parent="FootCollision"]
+position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FootCollision/BreakFeet"]
 position = Vector2(0, -2.5)
@@ -79,4 +81,5 @@ collision_mask = 33
 [connection signal="timeout" from="growth_timer" to="." method="_on_growth_timer_timeout"]
 [connection signal="area_entered" from="FootCollision/BreakFeet" to="." method="_on_break_feet_area_entered"]
 [connection signal="body_entered" from="FootCollision/BreakFeet" to="." method="_on_break_feet_body_entered"]
+[connection signal="area_entered" from="DeathDetector" to="." method="_on_death_detector_area_entered"]
 [connection signal="body_entered" from="DeathDetector" to="." method="_on_death_detector_body_entered"]

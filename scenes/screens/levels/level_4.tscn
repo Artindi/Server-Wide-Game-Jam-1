@@ -5,12 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bdkgiqelqw5du" path="res://scenes/concrete_tile_map.tscn" id="3_yrwpa"]
 [ext_resource type="Texture2D" uid="uid://dxklqc14ijc7t" path="res://assets/images/bg_level_1.png" id="4_gc8kx"]
 
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vaqgp"]
-size = Vector2(112, 15)
-
 [node name="Level 4" instance=ExtResource("1_kukaf")]
-
 
 [node name="Objective" parent="." index="1"]
 position = Vector2(80, -200)
