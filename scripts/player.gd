@@ -11,11 +11,13 @@ class_name Player
 
 @export var timer_seconds : float = 0.75
 
-var headWithLegs = preload("res://assets/images/characters/Pot.png")
-var headWithoutLegs = preload("res://assets/images/characters/Pot_with_green.png")
-var tallFootSprite = preload("res://assets/images/characters/legs_with_green.png")
-var shortFootSprite = preload("res://assets/images/characters/legs.png")
+var headWithLegs = preload("res://assets/images/characters/pot_looking_no_green.png")
+var headWithoutLegs = preload("res://assets/images/characters/pot_looking.png")
+var tallFootSprite = preload("res://assets/images/characters/pot_walking.png")
+var shortFootSprite = preload("res://assets/images/characters/pot_walking_no_green.png")
 var camera = preload("res://scenes/Player/Custom_camera.tscn")
+
+var explosion = preload("res://scenes/Player/explosion.tscn")
 
 var SECTION = preload("res://scenes/Player/section.tscn")
 
@@ -50,8 +52,21 @@ func _physics_process(delta) -> void:
 	
 	if direction:
 		velocity.x = direction * SPEED
+		if velocity.x > 0:
+			$"Sprite2D/Head animation".play("looking_right")
+			$"FootCollision/Sprite2D/Foot animation".play("walking_right")
+		if velocity.x < 0:
+			$"Sprite2D/Head animation".play("looking_left")
+			$"FootCollision/Sprite2D/Foot animation".play("walking_left")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	#this fixes a bug that causes the plant to break when standing on an edge
+	if velocity.x == 0:
+		$"FootCollision/Sprite2D/Foot animation".play("idle")
+		$FootCollision.shape.size.x = 6
+	else:
+		$FootCollision.shape.size.x = 4
 
 	move_and_slide()
 
@@ -123,3 +138,8 @@ func _on_break_feet_area_entered(area):
 func _on_death_detector_body_entered(_body) -> void:
 	get_tree().reload_current_scene()
 
+# didn't work(
+#func particles(x):
+	#var inst = x.instantiate()
+	#add_child(inst)
+	#inst.global_position = self.global_position

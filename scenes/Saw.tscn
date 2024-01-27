@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dip5clb4pxtu1"]
 
 [ext_resource type="Script" path="res://scripts/Saw.gd" id="1_qakxi"]
-[ext_resource type="Texture2D" uid="uid://c37d68wp1vum4" path="res://assets/images/Floor Saw Prototype.png" id="2_lc3ry"]
+[ext_resource type="SpriteFrames" uid="uid://bppo1xqyg0nww" path="res://resources/saw_sprite_frames.tres" id="2_qsx7r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ler1r"]
 size = Vector2(12, 10)
@@ -11,8 +11,10 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_qakxi")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_lc3ry")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_qsx7r")
+animation = &"idle"
+frame_progress = 0.900158
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)

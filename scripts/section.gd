@@ -22,7 +22,6 @@ func _ready():
 func _physics_process(delta):
 	if position.y >= player.get_node("FootCollision").position.y:
 		queue_free()
-	pass
 
 func _on_area_2d_body_entered(body):
 	if body.name == "TileMap" or "Concrete" in body.get_name():
