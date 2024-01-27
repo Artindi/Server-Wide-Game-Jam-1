@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/Lightbound.gd" id="2_8pyq5"]
 
 [sub_resource type="Gradient" id="Gradient_fouv4"]
-offsets = PackedFloat32Array(0, 0.116883)
+offsets = PackedFloat32Array(0, 0.0519481)
 colors = PackedColorArray(0.956863, 1, 0.670588, 0.556863, 0.956863, 1, 0.670588, 0.105882)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_6j83v"]
@@ -20,7 +20,7 @@ texture = ExtResource("1_sia4c")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(0, -6)
-target_position = Vector2(0, 320)
+target_position = Vector2(0, 1000)
 
 [node name="Control" type="Control" parent="."]
 clip_contents = true
@@ -33,9 +33,9 @@ offset_bottom = 32.0
 script = ExtResource("2_8pyq5")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Control"]
-position = Vector2(7, 130)
+position = Vector2(6.99898, 411.592)
 rotation = 1.5708
-scale = Vector2(1, 14)
+scale = Vector2(3.19994, 14)
 texture = SubResource("GradientTexture1D_6j83v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

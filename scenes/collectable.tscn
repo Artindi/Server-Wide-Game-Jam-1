@@ -1,8 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://b72dkcfp1mghu"]
+[gd_scene load_steps=24 format=3 uid="uid://b72dkcfp1mghu"]
 
 [ext_resource type="Script" path="res://scripts/Collectable.gd" id="1_epk8q"]
 [ext_resource type="Texture2D" uid="uid://cm08qfq84vmol" path="res://assets/images/collectable.png" id="2_mmkc4"]
-[ext_resource type="AudioStream" uid="uid://ddbqori4lcdqn" path="res://assets/soundFX/Collectible.mp3" id="3_gd0wv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ovfnj"]
 radius = 7.0
@@ -167,9 +166,5 @@ shape = SubResource("CircleShape2D_ovfnj")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Area2D"]
 position = Vector2(0, 0.739195)
 sprite_frames = SubResource("SpriteFrames_g2qgh")
-
-[node name="CollectedSound" type="AudioStreamPlayer2D" parent="Area2D"]
-stream = ExtResource("3_gd0wv")
-volume_db = 8.0
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

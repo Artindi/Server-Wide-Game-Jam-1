@@ -1,14 +1,27 @@
-[gd_scene load_steps=21 format=3 uid="uid://2aa7gv0i0jdn"]
+[gd_scene load_steps=18 format=3 uid="uid://2aa7gv0i0jdn"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_30jw6"]
 [ext_resource type="Texture2D" uid="uid://dr8pqt3src126" path="res://assets/images/characters/pot_looking.png" id="2_2l6y0"]
 [ext_resource type="Texture2D" uid="uid://b0slcm6fvamnp" path="res://assets/images/characters/pot_walking.png" id="3_lbxua"]
-[ext_resource type="AudioStream" uid="uid://bjvw31admuhhq" path="res://assets/soundFX/Grow.wav" id="4_cwqa8"]
-[ext_resource type="AudioStream" uid="uid://coig60fx8ucdb" path="res://assets/soundFX/grassWalking.mp3" id="5_n4ht7"]
-[ext_resource type="AudioStream" uid="uid://ct7r3b7becmeu" path="res://assets/soundFX/Breaking.mp3" id="6_4lobq"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_02nqj"]
 polygon = PackedVector2Array(-4, -8, -4, -6, -7, -6, -7, -3, -8, -3, -8, 0, 8, 0, 8, -3, 7, -3, 7, -6, 4, -6, 4, -8)
+
+[sub_resource type="Animation" id="Animation_se1qb"]
+resource_name = "looking_right"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_tgyi6"]
 length = 0.001
@@ -41,22 +54,6 @@ tracks/0/keys = {
 "values": [1]
 }
 
-[sub_resource type="Animation" id="Animation_se1qb"]
-resource_name = "looking_right"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w0tww"]
 _data = {
 "RESET": SubResource("Animation_tgyi6"),
@@ -69,6 +66,23 @@ size = Vector2(14, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjgpk"]
 size = Vector2(4, 14)
+
+[sub_resource type="Animation" id="Animation_h7ekw"]
+resource_name = "walking_right"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
 
 [sub_resource type="Animation" id="Animation_kggx4"]
 length = 0.001
@@ -83,23 +97,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_m3opk"]
-resource_name = "idle"
-length = 1.2
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [10, 11, 12, 13, 13, 10, 10]
 }
 
 [sub_resource type="Animation" id="Animation_fdrtf"]
@@ -119,9 +116,9 @@ tracks/0/keys = {
 "values": [5, 7, 8, 9, 10]
 }
 
-[sub_resource type="Animation" id="Animation_h7ekw"]
-resource_name = "walking_right"
-length = 0.4
+[sub_resource type="Animation" id="Animation_m3opk"]
+resource_name = "idle"
+length = 1.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -130,10 +127,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4]
+"values": [10, 11, 12, 13, 13, 10, 10]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bu8ed"]
@@ -174,6 +171,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_74oul")
 
 [node name="growth_timer" type="Timer" parent="."]
@@ -208,12 +206,6 @@ position = Vector2(0, 6)
 target_position = Vector2(0, 1000)
 collision_mask = 33
 
-[node name="WalkingSound" type="AudioStreamPlayer2D" parent="FootCollision"]
-position = Vector2(0, -17)
-stream = ExtResource("5_n4ht7")
-volume_db = 12.0
-attenuation = 14.9285
-
 [node name="DeathDetector" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
@@ -226,13 +218,6 @@ shape = SubResource("RectangleShape2D_h5ii8")
 [node name="GrowthLightDetection" type="RayCast2D" parent="."]
 target_position = Vector2(0, -1000)
 collision_mask = 33
-
-[node name="GrowSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_cwqa8")
-volume_db = -10.0
-
-[node name="BreakingSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_4lobq")
 
 [connection signal="timeout" from="growth_timer" to="." method="_on_growth_timer_timeout"]
 [connection signal="area_entered" from="FootCollision/BreakFeet" to="." method="_on_break_feet_area_entered"]
