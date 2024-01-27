@@ -132,3 +132,9 @@ func _on_break_feet_area_entered(area):
 func _on_death_detector_body_entered(_body) -> void:
 	get_tree().reload_current_scene()
 
+
+
+func _on_death_detector_area_entered(area):
+	if "Saw" in area.get_name():
+		get_tree().reload_current_scene()
+	pass # Replace with function body.
