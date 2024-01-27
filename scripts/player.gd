@@ -120,7 +120,7 @@ func _on_growth_timer_timeout() -> void:
 		removeSection()
 
 func _on_break_feet_body_entered(body) -> void:
-	if body.name == "TileMap":
+	if body.name == "TileMap" or "Concrete" in body.get_name():
 		moveFeet(sections.get_child_count())
 		velocity.y = -128
 		
