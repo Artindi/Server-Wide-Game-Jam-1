@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dip5clb4pxtu1"]
+[gd_scene load_steps=5 format=3 uid="uid://dip5clb4pxtu1"]
 
 [ext_resource type="Script" path="res://scripts/Saw.gd" id="1_qakxi"]
 [ext_resource type="SpriteFrames" uid="uid://bppo1xqyg0nww" path="res://resources/saw_sprite_frames.tres" id="2_qsx7r"]
+[ext_resource type="AudioStream" uid="uid://bn03t4ys34a61" path="res://assets/soundFX/Saw.mp3" id="3_nrjvj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ler1r"]
 size = Vector2(12, 8)
 
 [node name="Saw" type="Area2D"]
 collision_layer = 7
-collision_mask = 3
+collision_mask = 7
 script = ExtResource("1_qakxi")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
@@ -19,6 +20,12 @@ frame_progress = 0.900158
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_ler1r")
+
+[node name="SawSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_nrjvj")
+volume_db = -5.0
+pitch_scale = 0.8
+attenuation = 16.5642
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
