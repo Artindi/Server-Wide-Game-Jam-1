@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d4b6p8eos4vf0"]
 
-[ext_resource type="Script" path="res://scenes/screens/level_select.gd" id="1_d1hbr"]
+[ext_resource type="Script" path="res://scripts/level_select.gd" id="1_d1hbr"]
 
 [node name="Level Select" type="Control" node_paths=PackedStringArray("level1", "level2", "level3", "level4", "level5", "level6", "level7", "level8", "level9", "level10", "level11", "level12", "level13", "level14", "level15")]
 layout_mode = 3
