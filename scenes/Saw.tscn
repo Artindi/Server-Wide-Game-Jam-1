@@ -8,7 +8,7 @@ size = Vector2(12, 8)
 
 [node name="Saw" type="Area2D"]
 collision_layer = 7
-collision_mask = 3
+collision_mask = 7
 script = ExtResource("1_qakxi")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]

@@ -146,3 +146,9 @@ func _on_death_detector_body_entered(_body) -> void:
 	#var inst = x.instantiate()
 	#add_child(inst)
 	#inst.global_position = self.global_position
+
+
+func _on_death_detector_area_entered(area):
+	if "Saw" in area.get_name():
+		get_tree().reload_current_scene()
+	pass # Replace with function body.
