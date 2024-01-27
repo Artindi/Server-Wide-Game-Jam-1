@@ -1,19 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://buqmhvrx8m1jm"]
+[gd_scene load_steps=6 format=3 uid="uid://buqmhvrx8m1jm"]
 
 [ext_resource type="PackedScene" uid="uid://bn6f7ca4bl2ie" path="res://scenes/screens/levels/template.tscn" id="1_0kg5u"]
 [ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/Player/Custom_camera.tscn" id="2_5hckn"]
 [ext_resource type="PackedScene" uid="uid://dip5clb4pxtu1" path="res://scenes/Saw.tscn" id="3_g1ts1"]
 [ext_resource type="PackedScene" uid="uid://bdkgiqelqw5du" path="res://scenes/concrete_tile_map.tscn" id="4_nltgk"]
+[ext_resource type="PackedScene" uid="uid://j4mbimua5ljl" path="res://resources/parallax_background.tscn" id="5_biiyu"]
 
-[node name="level_10" instance=ExtResource("1_0kg5u")]
+[node name="Level 10" instance=ExtResource("1_0kg5u")]
 
 [node name="Objective" parent="." index="1"]
+
 position = Vector2(360, -184)
 next_level = 1
 
 [node name="Camera2D" parent="." index="5" instance=ExtResource("2_5hckn")]
 limit_left = 0
-limit_top = -160
+limit_top = -80
 limit_right = 550
 limit_bottom = 250
 limit_smoothed = true

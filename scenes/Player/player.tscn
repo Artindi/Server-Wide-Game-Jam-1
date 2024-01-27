@@ -62,10 +62,10 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74oul"]
-size = Vector2(16, 13)
+size = Vector2(14, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjgpk"]
-size = Vector2(4, 16)
+size = Vector2(4, 14)
 
 [sub_resource type="Animation" id="Animation_h7ekw"]
 resource_name = "walking_right"
@@ -145,10 +145,10 @@ _data = {
 size = Vector2(6, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5ii8"]
-size = Vector2(16, 11)
+size = Vector2(14, 11)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sections", "foot_collision", "headSprite", "footSprite", "growth_timer", "concrete_detector", "growth_light_detector")]
-collision_layer = 3
+collision_layer = 2
 script = ExtResource("1_30jw6")
 sections = NodePath("Sections")
 foot_collision = NodePath("FootCollision")
@@ -171,7 +171,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.5)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_74oul")
 
 [node name="growth_timer" type="Timer" parent="."]
@@ -181,7 +181,7 @@ autostart = true
 [node name="Sections" type="Node2D" parent="."]
 
 [node name="FootCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 16)
+position = Vector2(0, 17)
 shape = SubResource("RectangleShape2D_rjgpk")
 
 [node name="Sprite2D" type="Sprite2D" parent="FootCollision"]
@@ -195,6 +195,7 @@ libraries = {
 }
 
 [node name="BreakFeet" type="Area2D" parent="FootCollision"]
+position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FootCollision/BreakFeet"]
 position = Vector2(0, -2.5)
@@ -202,7 +203,7 @@ shape = SubResource("RectangleShape2D_prye1")
 
 [node name="ConcreteDetector" type="RayCast2D" parent="FootCollision"]
 position = Vector2(0, 6)
-target_position = Vector2(0, 96)
+target_position = Vector2(0, 1000)
 collision_mask = 33
 
 [node name="DeathDetector" type="Area2D" parent="."]
@@ -210,7 +211,8 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathDetector"]
-position = Vector2(0, 0.5)
+position = Vector2(7.62938e-06, -1)
+scale = Vector2(0.999998, 1)
 shape = SubResource("RectangleShape2D_h5ii8")
 
 [node name="GrowthLightDetection" type="RayCast2D" parent="."]
@@ -220,4 +222,5 @@ collision_mask = 33
 [connection signal="timeout" from="growth_timer" to="." method="_on_growth_timer_timeout"]
 [connection signal="area_entered" from="FootCollision/BreakFeet" to="." method="_on_break_feet_area_entered"]
 [connection signal="body_entered" from="FootCollision/BreakFeet" to="." method="_on_break_feet_body_entered"]
+[connection signal="area_entered" from="DeathDetector" to="." method="_on_death_detector_area_entered"]
 [connection signal="body_entered" from="DeathDetector" to="." method="_on_death_detector_body_entered"]

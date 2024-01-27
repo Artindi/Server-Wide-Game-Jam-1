@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://d4b6p8eos4vf0"]
 
-[ext_resource type="Script" path="res://scenes/screens/level_select.gd" id="1_d1hbr"]
+[ext_resource type="Script" path="res://scripts/level_select.gd" id="1_d1hbr"]
 
-[node name="Level Select" type="Control" node_paths=PackedStringArray("level1", "level2", "level3", "level4", "level5", "level6", "level7")]
+[node name="Level Select" type="Control" node_paths=PackedStringArray("level1", "level2", "level3", "level4", "level5", "level6", "level7", "level8", "level9", "level10", "level11", "level12", "level13", "level14", "level15")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +17,14 @@ level4 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level4Button")
 level5 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level5Button")
 level6 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level6Button")
 level7 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level7Button")
+level8 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level8Button")
+level9 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level9Button")
+level10 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level10Button")
+level11 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level11Button")
+level12 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level12Button")
+level13 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level13Button")
+level14 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level14Button")
+level15 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level15Button")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -81,10 +89,53 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Level 7"
 
+[node name="Level8Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 8"
+
+[node name="Level9Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 9"
+
 [node name="Level10Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Level 10"
+
+[node name="Level11Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 11"
+
+[node name="Level12Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 12"
+
+[node name="Level13Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 13"
+
+[node name="Level14Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 14"
+
+[node name="Level15Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 15"
 
 [node name="BackButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -97,5 +148,16 @@ text = "Back
 [connection signal="pressed" from="VBoxContainer/ScrollContainer/VBoxContainer/Level1Button" to="." method="_on_level_1_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ScrollContainer/VBoxContainer/Level2Button" to="." method="_on_level_2_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ScrollContainer/VBoxContainer/Level3Button" to="." method="_on_level_3_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ScrollContainer/VBoxContainer/Level4Button" to="." method="_on_level_4_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ScrollContainer/VBoxContainer/Level5Button" to="." method="_on_level_5_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ScrollContainer/VBoxContainer/Level6Button" to="." method="_on_level_6_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ScrollContainer/VBoxContainer/Level7Button" to="." method="_on_level_7_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ScrollContainer/VBoxContainer/Level8Button" to="." method="_on_level_8_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ScrollContainer/VBoxContainer/Level9Button" to="." method="_on_level_9_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ScrollContainer/VBoxContainer/Level10Button" to="." method="_on_level_10_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ScrollContainer/VBoxContainer/Level11Button" to="." method="_on_level_10_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/ScrollContainer/VBoxContainer/Level12Button" to="." method="_on_level_12_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ScrollContainer/VBoxContainer/Level13Button" to="." method="_on_level_13_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ScrollContainer/VBoxContainer/Level14Button" to="." method="_on_level_14_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ScrollContainer/VBoxContainer/Level15Button" to="." method="_on_level_15_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

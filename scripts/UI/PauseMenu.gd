@@ -30,3 +30,8 @@ func _on_quit_button_2_pressed():
 	get_tree().paused = false
 	SaveSystem.saving()
 	get_tree().quit(0)
+
+func _on_reset_button_pressed():
+	visible = false
+	get_tree().paused = false
+	get_tree().reload_current_scene()

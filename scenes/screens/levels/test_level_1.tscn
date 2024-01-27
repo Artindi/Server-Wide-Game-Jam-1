@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bykwonj3uok0x"]
+[gd_scene load_steps=7 format=3 uid="uid://bykwonj3uok0x"]
 
 [ext_resource type="PackedScene" uid="uid://bn6f7ca4bl2ie" path="res://scenes/screens/levels/template.tscn" id="1_1874w"]
 [ext_resource type="PackedScene" uid="uid://b72dkcfp1mghu" path="res://scenes/collectable.tscn" id="2_ts07x"]
 [ext_resource type="PackedScene" uid="uid://cxqqdmwe1qd68" path="res://scenes/screens/win_screen.tscn" id="3_gnvgp"]
+[ext_resource type="PackedScene" uid="uid://bdkgiqelqw5du" path="res://scenes/concrete_tile_map.tscn" id="4_g5wht"]
+[ext_resource type="PackedScene" uid="uid://dip5clb4pxtu1" path="res://scenes/Saw.tscn" id="5_p3ttl"]
+[ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/Player/Custom_camera.tscn" id="6_rmrc3"]
 
 [node name="Level 1" instance=ExtResource("1_1874w")]
 position = Vector2(0, 0.739195)
@@ -12,7 +15,7 @@ position = Vector2(60, -405)
 next_level = 2
 
 [node name="Acorn" parent="." index="4" instance=ExtResource("2_ts07x")]
-position = Vector2(117, 17)
+position = Vector2(208, 120.261)
 
 [node name="Acorn2" parent="." index="5" instance=ExtResource("2_ts07x")]
 position = Vector2(229, -322)

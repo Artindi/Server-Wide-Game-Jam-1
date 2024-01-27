@@ -33,6 +33,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready() -> void:
 	growth_timer.wait_time = timer_seconds
 
+func _input(_event) -> void:
+	if Input.is_action_just_pressed("Reset"):
+		get_tree().reload_current_scene()
+
 func _physics_process(delta) -> void:
 	#This makes the sprite look right when the player is one block tall
 	if foot_collision.position.y == 0:
@@ -125,7 +129,7 @@ func _on_growth_timer_timeout() -> void:
 		removeSection()
 
 func _on_break_feet_body_entered(body) -> void:
-	if body.name == "TileMap":
+	if body.name == "TileMap" or "Concrete" in body.get_name():
 		moveFeet(sections.get_child_count())
 		velocity.y = -128
 		
@@ -133,7 +137,6 @@ func _on_break_feet_area_entered(area):
 	if "Saw" in area.get_name():
 		moveFeet(sections.get_child_count())
 		velocity.y = -128
-	pass # Replace with function body.
 
 func _on_death_detector_body_entered(_body) -> void:
 	get_tree().reload_current_scene()
