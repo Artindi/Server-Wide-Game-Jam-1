@@ -31,6 +31,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready() -> void:
 	growth_timer.wait_time = timer_seconds
 
+func _input(_event) -> void:
+	if Input.is_action_just_pressed("Reset"):
+		get_tree().reload_current_scene()
+
 func _physics_process(delta) -> void:
 	#This makes the sprite look right when the player is one block tall
 	if foot_collision.position.y == 0:
@@ -55,9 +59,9 @@ func _physics_process(delta) -> void:
 	
 	#this fixes a bug that causes the plant to break when standing on an edge
 	if velocity.x == 0:
-		$FootCollision.shape.size.x = 6
+		foot_collision.shape.size.x = 6
 	else:
-		$FootCollision.shape.size.x = 4
+		foot_collision.shape.size.x = 4
 
 	move_and_slide()
 
@@ -124,7 +128,6 @@ func _on_break_feet_area_entered(area):
 	if "Saw" in area.get_name():
 		moveFeet(sections.get_child_count())
 		velocity.y = -128
-	pass # Replace with function body.
 
 func _on_death_detector_body_entered(_body) -> void:
 	get_tree().reload_current_scene()

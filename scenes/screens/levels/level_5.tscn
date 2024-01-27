@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://j4mbimua5ljl" path="res://resources/parallax_background.tscn" id="4_b6tqr"]
 [ext_resource type="PackedScene" uid="uid://b72dkcfp1mghu" path="res://scenes/collectable.tscn" id="5_80qyp"]
 
-[node name="level_5" instance=ExtResource("1_xb5ie")]
+[node name="Level 5" instance=ExtResource("1_xb5ie")]
 
 [node name="Objective" parent="." index="1"]
 position = Vector2(352, -96)
-next_level = 1
+next_level = 6
 
 [node name="Player" parent="." index="4"]
 position = Vector2(88, 104)
