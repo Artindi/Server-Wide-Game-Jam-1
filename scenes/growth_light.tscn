@@ -13,7 +13,7 @@ gradient = SubResource("Gradient_fouv4")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bs2cu"]
 size = Vector2(16, 16)
 
-[node name="GrowthLight" type="Area2D"]
+[node name="GrowthLight" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_sia4c")
