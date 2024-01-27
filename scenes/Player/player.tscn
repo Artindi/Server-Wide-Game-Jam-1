@@ -8,7 +8,7 @@
 polygon = PackedVector2Array(-4, -8, -4, -6, -7, -6, -7, -3, -8, -3, -8, 0, 8, 0, 8, -3, 7, -3, 7, -6, 4, -6, 4, -8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74oul"]
-size = Vector2(16, 13)
+size = Vector2(14, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjgpk"]
 size = Vector2(4, 14)
@@ -17,10 +17,10 @@ size = Vector2(4, 14)
 size = Vector2(6, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5ii8"]
-size = Vector2(16, 11)
+size = Vector2(14, 11)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sections", "foot_collision", "headSprite", "footSprite", "growth_timer", "concrete_detector", "growth_light_detector")]
-collision_layer = 3
+collision_layer = 2
 script = ExtResource("1_30jw6")
 sections = NodePath("Sections")
 foot_collision = NodePath("FootCollision")
@@ -37,7 +37,7 @@ texture = ExtResource("2_pjr2x")
 occluder = SubResource("OccluderPolygon2D_02nqj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.5)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_74oul")
 
 [node name="growth_timer" type="Timer" parent="."]
@@ -71,7 +71,8 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathDetector"]
-position = Vector2(0, 0.5)
+position = Vector2(7.62938e-06, -1)
+scale = Vector2(0.999998, 1)
 shape = SubResource("RectangleShape2D_h5ii8")
 
 [node name="GrowthLightDetection" type="RayCast2D" parent="."]
