@@ -21,6 +21,7 @@ collectables = [NodePath("../Collectible"), NodePath("../Collectible2")]
 
 [node name="Player" parent="." index="4"]
 position = Vector2(158, 126)
+timer_seconds = 0.75
 
 [node name="Camera2D" parent="." index="5" instance=ExtResource("2_bvu6d")]
 position = Vector2(144, 127)
