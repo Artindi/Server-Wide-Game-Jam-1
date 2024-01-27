@@ -1,0 +1,101 @@
+[gd_scene load_steps=11 format=3 uid="uid://2ghs0od46net"]
+
+[ext_resource type="Script" path="res://scenes/Player/explosion.gd" id="1_avsqp"]
+
+[sub_resource type="Curve" id="Curve_d76ee"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.649733, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -4.27707, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_d7kue"]
+curve = SubResource("Curve_d76ee")
+
+[sub_resource type="Curve" id="Curve_fulra"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 0.00659335), -2.78234, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_c4v21"]
+curve = SubResource("Curve_fulra")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t1f0j"]
+particle_flag_disable_z = true
+angle_min = -100.0
+angle_max = 100.0
+spread = 180.0
+initial_velocity_min = 2.0
+initial_velocity_max = 40.0
+gravity = Vector3(0, 98, 0)
+damping_max = 100.0
+scale_max = 4.0
+scale_curve = SubResource("CurveTexture_c4v21")
+alpha_curve = SubResource("CurveTexture_d7kue")
+collision_mode = 1
+collision_friction = 0.1
+collision_bounce = 0.11
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7pbex"]
+
+[sub_resource type="Animation" id="Animation_vfj7s"]
+resource_name = "explosion"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ygsdk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7knt0"]
+_data = {
+"RESET": SubResource("Animation_ygsdk"),
+"explosion": SubResource("Animation_vfj7s")
+}
+
+[node name="explosion" type="GPUParticles2D"]
+self_modulate = Color(0.309804, 0.466667, 0.329412, 1)
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_t1f0j")
+texture = SubResource("CanvasTexture_7pbex")
+one_shot = true
+explosiveness = 1.0
+script = ExtResource("1_avsqp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7knt0")
+}

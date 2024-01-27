@@ -14,7 +14,6 @@ gradient = SubResource("Gradient_fouv4")
 size = Vector2(16, 16)
 
 [node name="GrowthLight" type="StaticBody2D"]
-collision_layer = 32
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_sia4c")
