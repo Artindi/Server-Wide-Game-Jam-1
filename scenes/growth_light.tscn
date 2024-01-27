@@ -3,9 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://bl14rd5lmyf1e" path="res://assets/images/PrototypingLight.png" id="1_sia4c"]
 [ext_resource type="Script" path="res://scripts/Lightbound.gd" id="2_8pyq5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bs2cu"]
-size = Vector2(16, 16)
-
 [sub_resource type="Gradient" id="Gradient_fouv4"]
 offsets = PackedFloat32Array(0, 0.116883)
 colors = PackedColorArray(0.956863, 1, 0.670588, 0.556863, 0.956863, 1, 0.670588, 0.105882)
@@ -13,12 +10,10 @@ colors = PackedColorArray(0.956863, 1, 0.670588, 0.556863, 0.956863, 1, 0.670588
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_6j83v"]
 gradient = SubResource("Gradient_fouv4")
 
-[node name="GrowthLight" type="StaticBody2D"]
-collision_layer = 32
-collision_mask = 32
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bs2cu"]
+size = Vector2(16, 16)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_bs2cu")
+[node name="GrowthLight" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_sia4c")
@@ -42,3 +37,6 @@ position = Vector2(7, 130)
 rotation = 1.5708
 scale = Vector2(1, 14)
 texture = SubResource("GradientTexture1D_6j83v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bs2cu")
