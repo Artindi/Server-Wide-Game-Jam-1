@@ -6189,6 +6189,7 @@ sources/2 = SubResource("TileSetAtlasSource_dn26y")
 tile_set = SubResource("TileSet_ol1c2")
 format = 2
 layer_0/name = "background"
+layer_0/z_index = -1
 layer_1/name = "midground"
 layer_1/tile_data = PackedInt32Array()
 layer_2/name = "foreground"
