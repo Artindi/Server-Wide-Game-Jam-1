@@ -15,7 +15,7 @@ position = Vector2(60, -405)
 next_level = 2
 
 [node name="Acorn" parent="." index="4" instance=ExtResource("2_ts07x")]
-position = Vector2(117, 17)
+position = Vector2(208, 120.261)
 
 [node name="Acorn2" parent="." index="5" instance=ExtResource("2_ts07x")]
 position = Vector2(229, -322)
@@ -30,10 +30,10 @@ visible = false
 collectables = [NodePath("../Acorn"), NodePath("../Acorn2"), NodePath("../Acorn3")]
 
 [node name="Concrete" parent="." index="10" instance=ExtResource("4_g5wht")]
-layer_0/tile_data = PackedInt32Array(524296, 327682, 8, 524297, 393218, 8, 524298, 393218, 8, 524299, 393218, 8, 524300, 393218, 8, 524301, 393218, 8, 524302, 393218, 8, 524303, 393218, 8, 524304, 458754, 8, 393231, 327682, 8, 393232, 458754, 8)
+layer_0/tile_data = PackedInt32Array(524296, 393218, 8, 524297, 393218, 8, 524298, 393218, 8, 524299, 393218, 8, 524300, 393218, 8, 524301, 393218, 8, 524302, 393218, 11, 524303, 393218, 11, 524304, 458754, 11, 393231, 327682, 9, 393232, 458754, 9, 458767, 393218, 10, 458768, 458754, 10, 458766, 327682, 9, 524295, 393218, 8, 524294, 393218, 8, 524293, 393218, 8, 524292, 393218, 8, 524291, 262146, 11, 458755, 262146, 10, 393219, 262146, 9, 393220, 393218, 8, 393221, 393218, 8, 393222, 458754, 8)
 
 [node name="Saw" parent="." index="11" instance=ExtResource("5_p3ttl")]
-position = Vector2(178, 120.261)
+position = Vector2(27, 93.2608)
 
 [node name="Camera2D" parent="." index="12" instance=ExtResource("6_rmrc3")]
 position = Vector2(184, 100.261)

@@ -1,66 +1,170 @@
-[gd_scene load_steps=7 format=3 uid="uid://b72dkcfp1mghu"]
+[gd_scene load_steps=24 format=3 uid="uid://b72dkcfp1mghu"]
 
 [ext_resource type="Script" path="res://scripts/Collectable.gd" id="1_epk8q"]
-[ext_resource type="Texture2D" uid="uid://dlolggofmt3f8" path="res://assets/pixil-frame-0 - 2024-01-21T153507.195.png" id="2_2hk54"]
+[ext_resource type="Texture2D" uid="uid://cm08qfq84vmol" path="res://assets/images/collectable.png" id="2_mmkc4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ovfnj"]
 radius = 7.0
 
-[sub_resource type="Animation" id="Animation_pncme"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0.739195)]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_he7bh"]
+atlas = ExtResource("2_mmkc4")
+region = Rect2(224, 0, 16, 16)
 
-[sub_resource type="Animation" id="Animation_e36iv"]
-resource_name = "collectable-hover"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(-2, -2, -2),
-"update": 0,
-"values": [Vector2(0, 0.739195), Vector2(0, -1), Vector2(0, 0.739195)]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tjgs"]
+atlas = ExtResource("2_mmkc4")
+region = Rect2(240, 0, 16, 16)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_q5hhg"]
-_data = {
-"RESET": SubResource("Animation_pncme"),
-"collectable-hover": SubResource("Animation_e36iv")
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_2oi60"]
+atlas = ExtResource("2_mmkc4")
+region = Rect2(256, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_woato"]
+atlas = ExtResource("2_mmkc4")
+region = Rect2(272, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2rx1"]
+atlas = ExtResource("2_mmkc4")
+region = Rect2(288, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7ne8"]
+atlas = ExtResource("2_mmkc4")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sw2qa"]
+atlas = ExtResource("2_mmkc4")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axc0t"]
+atlas = ExtResource("2_mmkc4")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hm2ou"]
+atlas = ExtResource("2_mmkc4")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1j6i"]
+atlas = ExtResource("2_mmkc4")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_em0tf"]
+atlas = ExtResource("2_mmkc4")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0phtk"]
+atlas = ExtResource("2_mmkc4")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcw8c"]
+atlas = ExtResource("2_mmkc4")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83xht"]
+atlas = ExtResource("2_mmkc4")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ywyp"]
+atlas = ExtResource("2_mmkc4")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrd25"]
+atlas = ExtResource("2_mmkc4")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sspma"]
+atlas = ExtResource("2_mmkc4")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gvlj"]
+atlas = ExtResource("2_mmkc4")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62b7w"]
+atlas = ExtResource("2_mmkc4")
+region = Rect2(208, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g2qgh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_he7bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tjgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2oi60")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_woato")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2rx1")
+}],
+"loop": false,
+"name": &"collected",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 12.0,
+"texture": SubResource("AtlasTexture_n7ne8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sw2qa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axc0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hm2ou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1j6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_em0tf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0phtk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcw8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83xht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ywyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrd25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sspma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gvlj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62b7w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="Collectible" type="Node2D"]
 metadata/flag = "test"
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 16
+collision_mask = 19
 script = ExtResource("1_epk8q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_ovfnj")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Area2D"]
 position = Vector2(0, 0.739195)
-texture = ExtResource("2_2hk54")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D/Sprite2D"]
-libraries = {
-"": SubResource("AnimationLibrary_q5hhg")
-}
-autoplay = "collectable-hover"
+sprite_frames = SubResource("SpriteFrames_g2qgh")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
