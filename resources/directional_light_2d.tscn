@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cf2t25cjey3n6"]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D"]
+rotation = 0.0758604
+energy = 0.2
+range_layer_min = -500
+range_layer_max = 500
+shadow_enabled = true
