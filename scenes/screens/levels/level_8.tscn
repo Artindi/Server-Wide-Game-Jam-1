@@ -15,6 +15,7 @@ layer_2/tile_data = PackedInt32Array(-458751, 655362, 17, -524286, 1507330, 17, 
 
 [node name="Objective" parent="." index="1"]
 position = Vector2(-8, -365)
+next_level = 9
 
 [node name="Player" parent="." index="4"]
 position = Vector2(158, 85)
