@@ -1,6 +1,6 @@
 extends Area2D
 class_name Saw
-@export var sprite : Sprite2D
+@export var sprite : AnimatedSprite2D
 @export var saw_sound : AudioStreamPlayer2D
 
 func _ready():

@@ -7,10 +7,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ler1r"]
 size = Vector2(12, 8)
 
-[node name="Saw" type="Area2D"]
+[node name="Saw" type="Area2D" node_paths=PackedStringArray("sprite", "saw_sound")]
 collision_layer = 7
 collision_mask = 7
 script = ExtResource("1_qakxi")
+sprite = NodePath("Sprite2D")
+saw_sound = NodePath("SawSound")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_qsx7r")

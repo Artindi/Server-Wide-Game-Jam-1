@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4b6p8eos4vf0"]
+[gd_scene load_steps=4 format=3 uid="uid://d4b6p8eos4vf0"]
 
 [ext_resource type="Script" path="res://scripts/level_select.gd" id="1_d1hbr"]
+[ext_resource type="FontFile" uid="uid://gjss8fmy13x2" path="res://assets/fonts/dpcomic.ttf" id="2_0hupe"]
+[ext_resource type="Texture2D" uid="uid://cr8ur55lid8re" path="res://assets/images/bg_level_2_3.png" id="2_govj8"]
 
 [node name="Level Select" type="Control" node_paths=PackedStringArray("level1", "level2", "level3", "level4", "level5", "level6", "level7", "level8", "level9", "level10", "level11", "level12", "level13", "level14", "level15")]
 layout_mode = 3
@@ -26,18 +28,31 @@ level13 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level13Button")
 level14 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level14Button")
 level15 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level15Button")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 718.0
+color = Color(0.556863, 0.682353, 0.682353, 1)
+
+[node name="BgLevel23" type="Sprite2D" parent="."]
+position = Vector2(626, 197)
+scale = Vector2(2.80362, 2.80362)
+texture = ExtResource("2_govj8")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0hupe")
 theme_override_font_sizes/font_size = 50
-text = "Levels"
+text = " Levels"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -50,97 +65,113 @@ size_flags_vertical = 3
 
 [node name="Level1Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_0hupe")
+theme_override_font_sizes/font_size = 35
 text = "Level 1"
 
 [node name="Level2Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_0hupe")
+theme_override_font_sizes/font_size = 35
 text = "Level 2"
 
 [node name="Level3Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_0hupe")
+theme_override_font_sizes/font_size = 35
 text = "Level 3"
 
 [node name="Level4Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_0hupe")
+theme_override_font_sizes/font_size = 35
 text = "Level 4"
 
 [node name="Level5Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_0hupe")
+theme_override_font_sizes/font_size = 35
 text = "Level 5"
 
 [node name="Level6Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_0hupe")
+theme_override_font_sizes/font_size = 35
 text = "Level 6"
 
 [node name="Level7Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_0hupe")
+theme_override_font_sizes/font_size = 35
 text = "Level 7"
 
 [node name="Level8Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_0hupe")
+theme_override_font_sizes/font_size = 35
 text = "Level 8"
 
 [node name="Level9Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_0hupe")
+theme_override_font_sizes/font_size = 35
 text = "Level 9"
 
 [node name="Level10Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_0hupe")
+theme_override_font_sizes/font_size = 35
 text = "Level 10"
 
 [node name="Level11Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_0hupe")
+theme_override_font_sizes/font_size = 35
 text = "Level 11"
 
 [node name="Level12Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_0hupe")
+theme_override_font_sizes/font_size = 35
 text = "Level 12"
 
 [node name="Level13Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_0hupe")
+theme_override_font_sizes/font_size = 35
 text = "Level 13"
 
 [node name="Level14Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_0hupe")
+theme_override_font_sizes/font_size = 35
 text = "Level 14"
 
 [node name="Level15Button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_0hupe")
+theme_override_font_sizes/font_size = 35
 text = "Level 15"
 
 [node name="BackButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_0hupe")
 theme_override_font_sizes/font_size = 30
 text = "Back
 "
