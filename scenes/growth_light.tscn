@@ -11,7 +11,7 @@ colors = PackedColorArray(0.956863, 1, 0.670588, 0.556863, 0.956863, 1, 0.670588
 gradient = SubResource("Gradient_fouv4")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bs2cu"]
-size = Vector2(16, 16)
+size = Vector2(16, 2)
 
 [node name="GrowthLight" type="StaticBody2D"]
 
@@ -39,4 +39,5 @@ scale = Vector2(3.19994, 14)
 texture = SubResource("GradientTexture1D_6j83v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_bs2cu")

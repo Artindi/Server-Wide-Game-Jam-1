@@ -182,6 +182,8 @@ position = Vector2(340, 104)
 
 [node name="Collectible" parent="." index="10" instance=ExtResource("6_odqsf")]
 position = Vector2(305, 75)
+metadata/flag = "14-01"
 
 [node name="Collectible2" parent="." index="11" instance=ExtResource("6_odqsf")]
 position = Vector2(696, 13)
+metadata/flag = "14-02"

@@ -21,6 +21,9 @@ position = Vector2(-16, -976)
 scale = Vector2(3.99591, 1)
 next_level = 10
 
+[node name="Win Screen" parent="." index="4" node_paths=PackedStringArray("collectables")]
+collectables = [NodePath("../Node2D"), NodePath("../Node2D2")]
+
 [node name="Player" parent="." index="5"]
 position = Vector2(95, 120)
 
@@ -107,6 +110,8 @@ position = Vector2(-120, -776)
 
 [node name="Node2D" parent="." index="31" instance=ExtResource("5_qo6qd")]
 position = Vector2(-168, 168)
+metadata/flag = "09-01"
 
 [node name="Node2D2" parent="." index="32" instance=ExtResource("5_qo6qd")]
 position = Vector2(120, -712)
+metadata/flag = "09-02"

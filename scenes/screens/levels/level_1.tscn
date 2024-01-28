@@ -49,3 +49,4 @@ shadow_enabled = true
 
 [node name="Collectible" parent="." index="9" instance=ExtResource("4_7xd1h")]
 position = Vector2(176, 104)
+metadata/flag = "01-01"

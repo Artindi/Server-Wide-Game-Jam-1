@@ -56,6 +56,8 @@ limit_bottom = 180
 
 [node name="Collectible" parent="." index="16" instance=ExtResource("4_rc0d2")]
 position = Vector2(712, 38)
+metadata/flag = "11-01"
 
 [node name="Collectible2" parent="." index="17" instance=ExtResource("4_rc0d2")]
 position = Vector2(264, 2)
+metadata/flag = "11-02"

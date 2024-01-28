@@ -3,3 +3,6 @@ Collectables are saved under "SaveSystem.save_game.collection"
 Each collectable has a seperate flag. Don't forget to change the flag in the metadata to make each collectable unique.
 
 In each level, drag each collectable into the exported array in the win_screen in order for it to count them.
+Make sure to give each collectable the metadata levelNumber-itemNumber, so the 2nd collectable in level 6 would 
+	be labled 06-02 ("order" doesn't matter, each collectable just has to have unique metadata). The actual value 
+	of the metadata doesn't *really* matter but I figure it's good to be consistent
