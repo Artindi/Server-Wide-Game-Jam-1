@@ -7,8 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://c8x4r74ym7o3q" path="res://scenes/PauseMenu.tscn" id="5_s4wam"]
 [ext_resource type="PackedScene" uid="uid://cxqqdmwe1qd68" path="res://scenes/screens/win_screen.tscn" id="6_u3y3s"]
 
-[node name="Template" type="Node2D"]
+[node name="Template" type="Node2D" node_paths=PackedStringArray("objective", "music_player")]
 script = ExtResource("1_vjdaw")
+objective = NodePath("Objective")
+music_player = NodePath("AudioStreamPlayer2D")
 
 [node name="decoration for bg" parent="." instance=ExtResource("2_42e5c")]
 
@@ -27,3 +29,5 @@ visible = false
 position = Vector2(158, 90)
 
 [node name="TileMap" parent="." instance=ExtResource("2_42e5c")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
