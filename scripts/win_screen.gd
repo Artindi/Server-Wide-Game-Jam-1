@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @export var collectables = [] as Array[Node2D]
+@export var last_level : bool = false
 
 @onready var score_label = $Control/VBoxContainer/ScoreLabel
 
@@ -19,4 +20,7 @@ func appear(path):
 
 func _on_continue_button_pressed():
 	get_tree().paused = false
+	if last_level:
+		get_tree().change_scene_to_file("res://scenes/screens/credits.tscn")
+		return
 	get_tree().change_scene_to_file(next_scene)

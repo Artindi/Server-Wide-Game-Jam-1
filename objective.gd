@@ -3,10 +3,10 @@ extends StaticBody2D
 @export var win_screen : CanvasLayer
 
 # If the objective is touched by the player, it does this thing
-func _on_area_2d_body_entered(body) -> void:
-	#print("Works")
-	# this makes it so the next level appears in the level select if it doesn't already exist
+func _on_area_2d_body_entered(_body) -> void:
 	if next_level > SaveSystem.save_game.level:
+		if next_level == 16:
+			pass
 		SaveSystem.save_game.level = next_level 
 	SaveSystem.saving()
 	
