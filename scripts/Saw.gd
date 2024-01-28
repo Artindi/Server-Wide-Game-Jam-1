@@ -1,17 +1,11 @@
 extends Area2D
 class_name Saw
+@export var sprite : Sprite2D
+@export var saw_sound : AudioStreamPlayer2D
 
 func _ready():
-	$Sprite2D.play("idle")
+	sprite.play("idle")
 	
 func _physics_process(delta):
-	if $SawSound.playing == false:
-		$SawSound.play()
-
-#func _on_body_entered(body):
-	#if (body is Player):
-		#body.growthDirection = false
-#
-#func _on_body_exited(body):
-	#if (body is Player):
-		#body.growthDirection = true
+	if saw_sound.playing == false:
+		saw_sound.play()

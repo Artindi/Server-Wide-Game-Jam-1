@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_30jw6"]
 [ext_resource type="Texture2D" uid="uid://dr8pqt3src126" path="res://assets/images/characters/pot_looking.png" id="2_2l6y0"]
 [ext_resource type="Texture2D" uid="uid://b0slcm6fvamnp" path="res://assets/images/characters/pot_walking.png" id="3_lbxua"]
-[ext_resource type="AudioStream" uid="uid://bjvw31admuhhq" path="res://assets/soundFX/Grow.wav" id="4_cwqa8"]
-[ext_resource type="AudioStream" uid="uid://coig60fx8ucdb" path="res://assets/soundFX/grassWalking.mp3" id="5_n4ht7"]
-[ext_resource type="AudioStream" uid="uid://ct7r3b7becmeu" path="res://assets/soundFX/Breaking.mp3" id="6_4lobq"]
+[ext_resource type="AudioStream" uid="uid://coig60fx8ucdb" path="res://assets/soundFX/grassWalking.mp3" id="4_naq45"]
+[ext_resource type="AudioStream" uid="uid://ct7r3b7becmeu" path="res://assets/soundFX/Breaking.mp3" id="4_tv3hb"]
+[ext_resource type="AudioStream" uid="uid://bjvw31admuhhq" path="res://assets/soundFX/Grow.wav" id="6_oko0v"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_02nqj"]
 polygon = PackedVector2Array(-4, -8, -4, -6, -7, -6, -7, -3, -8, -3, -8, 0, 8, 0, 8, -3, 7, -3, 7, -6, 4, -6, 4, -8)
@@ -150,16 +150,21 @@ size = Vector2(6, 3)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5ii8"]
 size = Vector2(14, 11)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sections", "foot_collision", "headSprite", "footSprite", "growth_timer", "concrete_detector", "growth_light_detector")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sections", "foot_collision", "headSprite", "head_animation", "footSprite", "foot_animation", "growth_timer", "concrete_detector", "growth_light_detector", "walking_sound", "breaking_sound", "growing_sound")]
 collision_layer = 2
 script = ExtResource("1_30jw6")
 sections = NodePath("Sections")
 foot_collision = NodePath("FootCollision")
 headSprite = NodePath("Sprite2D")
+head_animation = NodePath("Sprite2D/Head animation")
 footSprite = NodePath("FootCollision/Sprite2D")
+foot_animation = NodePath("FootCollision/Sprite2D/Foot animation")
 growth_timer = NodePath("growth_timer")
 concrete_detector = NodePath("FootCollision/ConcreteDetector")
 growth_light_detector = NodePath("GrowthLightDetection")
+walking_sound = NodePath("FootCollision/WalkingSound")
+breaking_sound = NodePath("BreakingSound")
+growing_sound = NodePath("GrowSound")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_2l6y0")
@@ -209,10 +214,8 @@ target_position = Vector2(0, 1000)
 collision_mask = 33
 
 [node name="WalkingSound" type="AudioStreamPlayer2D" parent="FootCollision"]
-position = Vector2(0, -17)
-stream = ExtResource("5_n4ht7")
-volume_db = 12.0
-attenuation = 14.9285
+stream = ExtResource("4_naq45")
+bus = &"SFX"
 
 [node name="DeathDetector" type="Area2D" parent="."]
 collision_layer = 0
@@ -227,12 +230,13 @@ shape = SubResource("RectangleShape2D_h5ii8")
 target_position = Vector2(0, -1000)
 collision_mask = 33
 
-[node name="GrowSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_cwqa8")
-volume_db = -10.0
-
 [node name="BreakingSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_4lobq")
+stream = ExtResource("4_tv3hb")
+bus = &"SFX"
+
+[node name="GrowSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_oko0v")
+bus = &"SFX"
 
 [connection signal="timeout" from="growth_timer" to="." method="_on_growth_timer_timeout"]
 [connection signal="area_entered" from="FootCollision/BreakFeet" to="." method="_on_break_feet_area_entered"]
