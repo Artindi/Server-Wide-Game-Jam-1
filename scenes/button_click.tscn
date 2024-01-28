@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://iaje23rltc2u"]
+
+[ext_resource type="AudioStream" uid="uid://ci68nv54nax3a" path="res://assets/soundFX/Button Click.mp3" id="1_he4dq"]
+
+[node name="ButtonClick" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_he4dq")
+pitch_scale = 1.5
+bus = &"SFX"

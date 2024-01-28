@@ -3,7 +3,8 @@ extends CanvasLayer
 @export var collectables = [] as Array[Node2D]
 @export var last_level : bool = false
 
-@onready var score_label = $Control/VBoxContainer/ScoreLabel
+@export var score_label : Label
+@export var button_click : AudioStreamPlayer2D
 
 var next_scene : String
 
@@ -20,6 +21,8 @@ func appear(path):
 
 func _on_continue_button_pressed():
 	get_tree().paused = false
+	button_click.play()
+	await get_tree().create_timer(0.15).timeout
 	if last_level:
 		get_tree().change_scene_to_file("res://scenes/screens/credits.tscn")
 		return

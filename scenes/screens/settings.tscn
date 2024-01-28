@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://blfpxlhxw4is2"]
+[gd_scene load_steps=5 format=3 uid="uid://blfpxlhxw4is2"]
 
+[ext_resource type="PackedScene" uid="uid://iaje23rltc2u" path="res://scenes/button_click.tscn" id="2_1p3tq"]
 [ext_resource type="Script" path="res://scripts/settings.gd" id="2_o4kiu"]
 [ext_resource type="FontFile" uid="uid://gjss8fmy13x2" path="res://assets/fonts/dpcomic.ttf" id="2_v4u6t"]
 
 [sub_resource type="Theme" id="Theme_ngole"]
 default_font = ExtResource("2_v4u6t")
 
-[node name="Settings" type="Control" node_paths=PackedStringArray("display_options", "master_vol", "music_vol", "sfx_vol")]
+[node name="Settings" type="Control" node_paths=PackedStringArray("display_options", "master_vol", "music_vol", "sfx_vol", "button_click")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1280.0
@@ -16,6 +17,9 @@ display_options = NodePath("VBoxContainer/MarginContainer/VideoSettings/DisplayM
 master_vol = NodePath("VBoxContainer/MarginContainer2/AudioSettings/MasterVolSlider")
 music_vol = NodePath("VBoxContainer/MarginContainer2/AudioSettings/MusicVolSlider")
 sfx_vol = NodePath("VBoxContainer/MarginContainer2/AudioSettings/SFXVolSlider")
+button_click = NodePath("ButtonClick")
+
+[node name="ButtonClick" parent="." instance=ExtResource("2_1p3tq")]
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1

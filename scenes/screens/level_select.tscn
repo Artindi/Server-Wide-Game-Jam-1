@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4b6p8eos4vf0"]
+[gd_scene load_steps=5 format=3 uid="uid://d4b6p8eos4vf0"]
 
 [ext_resource type="Script" path="res://scripts/level_select.gd" id="1_d1hbr"]
 [ext_resource type="FontFile" uid="uid://gjss8fmy13x2" path="res://assets/fonts/dpcomic.ttf" id="2_0hupe"]
+[ext_resource type="PackedScene" uid="uid://iaje23rltc2u" path="res://scenes/button_click.tscn" id="2_6c6go"]
 [ext_resource type="Texture2D" uid="uid://cr8ur55lid8re" path="res://assets/images/bg_level_2_3.png" id="2_govj8"]
 
-[node name="Level Select" type="Control" node_paths=PackedStringArray("level1", "level2", "level3", "level4", "level5", "level6", "level7", "level8", "level9", "level10", "level11", "level12", "level13", "level14", "level15")]
+[node name="Level Select" type="Control" node_paths=PackedStringArray("button_click", "level1", "level2", "level3", "level4", "level5", "level6", "level7", "level8", "level9", "level10", "level11", "level12", "level13", "level14", "level15")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d1hbr")
+button_click = NodePath("ButtonClick")
 level1 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level1Button")
 level2 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level2Button")
 level3 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level3Button")
@@ -27,6 +29,8 @@ level12 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level12Button")
 level13 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level13Button")
 level14 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level14Button")
 level15 = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Level15Button")
+
+[node name="ButtonClick" parent="." instance=ExtResource("2_6c6go")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0

@@ -1,15 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxqqdmwe1qd68"]
+[gd_scene load_steps=5 format=3 uid="uid://cxqqdmwe1qd68"]
 
 [ext_resource type="Script" path="res://scripts/win_screen.gd" id="1_xw6ch"]
+[ext_resource type="PackedScene" uid="uid://iaje23rltc2u" path="res://scenes/button_click.tscn" id="2_8x58w"]
 [ext_resource type="FontFile" uid="uid://gjss8fmy13x2" path="res://assets/fonts/dpcomic.ttf" id="2_otfa1"]
 
 [sub_resource type="Theme" id="Theme_royfk"]
 default_font = ExtResource("2_otfa1")
 
-[node name="Win Screen" type="CanvasLayer" node_paths=PackedStringArray("collectables")]
+[node name="Win Screen" type="CanvasLayer" node_paths=PackedStringArray("collectables", "score_label", "button_click")]
 process_mode = 3
 script = ExtResource("1_xw6ch")
 collectables = []
+score_label = NodePath("Control/VBoxContainer/ScoreLabel")
+button_click = NodePath("ButtonClick")
+
+[node name="ButtonClick" parent="." instance=ExtResource("2_8x58w")]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
