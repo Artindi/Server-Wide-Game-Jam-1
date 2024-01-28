@@ -188,7 +188,7 @@ autostart = true
 [node name="Sections" type="Node2D" parent="."]
 
 [node name="FootCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 17)
+position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_rjgpk")
 
 [node name="Sprite2D" type="Sprite2D" parent="FootCollision"]

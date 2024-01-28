@@ -24,7 +24,8 @@ layer_2/tile_data = PackedInt32Array(393232, 1638402, 17)
 position = Vector2(256, -399)
 next_level = 16
 
-[node name="Win Screen" parent="." index="4"]
+[node name="Win Screen" parent="." index="4" node_paths=PackedStringArray("collectables")]
+collectables = [NodePath("../Collectible"), NodePath("../Collectible2")]
 last_level = true
 
 [node name="Player" parent="." index="5"]
@@ -80,6 +81,8 @@ position = Vector2(312, -296)
 
 [node name="Collectible" parent="." index="18" instance=ExtResource("7_al2si")]
 position = Vector2(40, -104)
+metadata/flag = "15-01"
 
 [node name="Collectible2" parent="." index="19" instance=ExtResource("7_al2si")]
 position = Vector2(330, -72)
+metadata/flag = "15-02"
