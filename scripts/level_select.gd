@@ -26,6 +26,7 @@ extends Control
 		level8,
 		level9,
 		level10,
+		level11,
 		level12,
 		level13,
 		level14,
@@ -36,7 +37,9 @@ func _ready() -> void:
 	SaveSystem.load_game()
 	# sifts through the level variable to see if certain levels are unlocked and shows them if they are
 	for i in SaveSystem.save_game.level:
-		array[i].show()
+		# arrays read 0-x and it needs to reed the 15th entry which is level 15 and has the variable level at 15 and the highest value in the array is 14 so everything needs to go down by one
+		var l = i - 1
+		array[l].show()
 
 func _on_back_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/screens/main_menu.tscn")

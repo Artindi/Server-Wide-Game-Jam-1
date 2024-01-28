@@ -4,10 +4,15 @@ class_name Player
 @export var sections : Node2D
 @export var foot_collision : CollisionShape2D
 @export var headSprite : Sprite2D
+@export var head_animation : AnimationPlayer
 @export var footSprite : Sprite2D
+@export var foot_animation : AnimationPlayer
 @export var growth_timer : Timer
 @export var concrete_detector : RayCast2D
 @export var growth_light_detector : RayCast2D
+@export var walking_sound : AudioStreamPlayer2D
+@export var breaking_sound : AudioStreamPlayer2D
+@export var growing_sound : AudioStreamPlayer2D
 
 @export var timer_seconds : float = 0.75
 
@@ -57,23 +62,23 @@ func _physics_process(delta) -> void:
 	if direction:
 		velocity.x = direction * SPEED
 		if velocity.x > 0:
-			$"Sprite2D/Head animation".play("looking_right")
-			$"FootCollision/Sprite2D/Foot animation".play("walking_right")
+			head_animation.play("looking_right")
+			foot_animation.play("walking_right")
 		if velocity.x < 0:
-			$"Sprite2D/Head animation".play("looking_left")
-			$"FootCollision/Sprite2D/Foot animation".play("walking_left")
-		if $FootCollision/WalkingSound.playing == false:
-			$FootCollision/WalkingSound.play()
+			head_animation.play("looking_left")
+			foot_animation.play("walking_left")
+		if walking_sound.playing == false:
+			walking_sound.play()
 	elif !direction:
-		$FootCollision/WalkingSound.stop()
+		walking_sound.stop()
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	#this fixes a bug that causes the plant to break when standing on an edge
 	if velocity.x == 0:
-		$"FootCollision/Sprite2D/Foot animation".play("idle")
-		$FootCollision.shape.size.x = 6
+		foot_animation.play("idle")
+		foot_collision.shape.size.x = 6
 	else:
-		$FootCollision.shape.size.x = 4
+		foot_collision.shape.size.x = 4
 
 	move_and_slide()
 
@@ -85,7 +90,7 @@ func moveFeet(distance) -> void:
 	#if (sections.get_child_count() > 0):
 		#self.global_position.y += 16
 		#moveFeet(sections.get_child_count())
-		#$BreakingSound.play()
+		#breaking_sound.play()
 	#else:
 		#get_tree().reload_current_scene()
 
@@ -140,7 +145,7 @@ func _on_break_feet_body_entered(body) -> void:
 		
 func _on_break_feet_area_entered(area):
 	if "Saw" in area.get_name():
-		$BreakingSound.play()
+		breaking_sound.play()
 		moveFeet(sections.get_child_count())
 		velocity.y = -128
 
@@ -153,19 +158,15 @@ func _on_death_detector_body_entered(_body) -> void:
 	#add_child(inst)
 	#inst.global_position = self.global_position
 
-
 func _on_death_detector_area_entered(area):
 	if "Saw" in area.get_name():
 		get_tree().reload_current_scene()
-	pass # Replace with function body.
-
 
 func playBreakingSound():
-	$BreakingSound.play()
-
+	breaking_sound.play()
 
 func playGrowSound():
 	var growSound = float(randi_range(6, 14)) / 10
-	$GrowSound.pitch_scale = growSound
-	$GrowSound.play()
+	growing_sound.pitch_scale = growSound
+	growing_sound.play()
 	pass

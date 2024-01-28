@@ -21,6 +21,9 @@ layer_2/tile_data = PackedInt32Array(393231, 1572866, 17, 393232, 1638402, 17, 3
 position = Vector2(256, -408)
 next_level = 2
 
+[node name="Win Screen" parent="." index="4" node_paths=PackedStringArray("collectables")]
+collectables = [NodePath("../Collectible")]
+
 [node name="Player" parent="." index="5"]
 position = Vector2(64, 88)
 
