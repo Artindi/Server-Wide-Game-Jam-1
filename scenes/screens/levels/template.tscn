@@ -10,7 +10,7 @@
 [node name="Template" type="Node2D" node_paths=PackedStringArray("objective", "music_player")]
 script = ExtResource("1_vjdaw")
 objective = NodePath("Objective")
-music_player = NodePath("AudioStreamPlayer2D")
+music_player = NodePath("")
 
 [node name="decoration for bg" parent="." instance=ExtResource("2_42e5c")]
 
@@ -29,5 +29,3 @@ visible = false
 position = Vector2(158, 90)
 
 [node name="TileMap" parent="." instance=ExtResource("2_42e5c")]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

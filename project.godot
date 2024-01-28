@@ -24,6 +24,7 @@ buses/default_bus_layout="res://resources/default_bus_layout.tres"
 [autoload]
 
 SaveSystem="*res://scripts/SaveSystem.gd"
+MusicController="*res://scenes/ music_controller.tscn"
 
 [display]
 

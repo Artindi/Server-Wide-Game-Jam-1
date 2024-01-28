@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c45qgpu3vwxop"]
+[gd_scene load_steps=16 format=3 uid="uid://c45qgpu3vwxop"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_jxads"]
 [ext_resource type="PackedScene" uid="uid://iaje23rltc2u" path="res://scenes/button_click.tscn" id="2_6qaqw"]
@@ -6,7 +6,6 @@
 [ext_resource type="FontFile" uid="uid://gjss8fmy13x2" path="res://assets/fonts/dpcomic.ttf" id="2_ewkas"]
 [ext_resource type="Texture2D" uid="uid://cr3vl6iyof43d" path="res://assets/images/title_screen_1.png" id="2_jfgor"]
 [ext_resource type="Texture2D" uid="uid://bhafxghjf01co" path="res://assets/images/title_screen_2.png" id="3_brsho"]
-[ext_resource type="AudioStream" uid="uid://drqdlqosverl0" path="res://assets/soundFX/bwahhhhhhhh.mp3" id="3_jnqpn"]
 [ext_resource type="Texture2D" uid="uid://b0ki3yaqrkum2" path="res://assets/images/title_screen_1_1.png" id="3_yst47"]
 [ext_resource type="Texture2D" uid="uid://bfb18xrbmgfc" path="res://assets/images/title_screen_3.png" id="4_q4rlj"]
 [ext_resource type="Texture2D" uid="uid://denc7h0dxp3ih" path="res://assets/images/title_screen_2_1.png" id="5_liw5k"]
@@ -32,12 +31,6 @@ button_click = NodePath("ButtonClick")
 settings = NodePath("CanvasLayer/Settings")
 
 [node name="ButtonClick" parent="." instance=ExtResource("2_6qaqw")]
-
-[node name="Bwahh" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_jnqpn")
-volume_db = 24.0
-autoplay = true
-bus = &"Music"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
