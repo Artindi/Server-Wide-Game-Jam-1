@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://c45qgpu3vwxop"]
+[gd_scene load_steps=16 format=3 uid="uid://c45qgpu3vwxop"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_jxads"]
+[ext_resource type="PackedScene" uid="uid://iaje23rltc2u" path="res://scenes/button_click.tscn" id="2_6qaqw"]
 [ext_resource type="PackedScene" uid="uid://blfpxlhxw4is2" path="res://scenes/screens/settings.tscn" id="2_b6po7"]
 [ext_resource type="FontFile" uid="uid://gjss8fmy13x2" path="res://assets/fonts/dpcomic.ttf" id="2_ewkas"]
 [ext_resource type="Texture2D" uid="uid://cr3vl6iyof43d" path="res://assets/images/title_screen_1.png" id="2_jfgor"]
@@ -17,7 +18,7 @@
 [sub_resource type="Theme" id="Theme_nf1io"]
 default_font = ExtResource("2_ewkas")
 
-[node name="Main Menu" type="Control" node_paths=PackedStringArray("settings")]
+[node name="Main Menu" type="Control" node_paths=PackedStringArray("button_click", "settings")]
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 3
 anchors_preset = 15
@@ -26,7 +27,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jxads")
+button_click = NodePath("ButtonClick")
 settings = NodePath("CanvasLayer/Settings")
+
+[node name="ButtonClick" parent="." instance=ExtResource("2_6qaqw")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

@@ -1,16 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8x4r74ym7o3q"]
+[gd_scene load_steps=6 format=3 uid="uid://c8x4r74ym7o3q"]
 
 [ext_resource type="Script" path="res://scripts/UI/PauseMenu.gd" id="1_0js27"]
 [ext_resource type="FontFile" uid="uid://gjss8fmy13x2" path="res://assets/fonts/dpcomic.ttf" id="2_keilr"]
 [ext_resource type="PackedScene" uid="uid://blfpxlhxw4is2" path="res://scenes/screens/settings.tscn" id="2_nooot"]
+[ext_resource type="PackedScene" uid="uid://iaje23rltc2u" path="res://scenes/button_click.tscn" id="2_tyypw"]
 
 [sub_resource type="Theme" id="Theme_644qr"]
 default_font = ExtResource("2_keilr")
 
-[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("settings")]
+[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("button_click", "settings")]
 process_mode = 3
 script = ExtResource("1_0js27")
+button_click = NodePath("ButtonClick")
 settings = NodePath("Settings")
+
+[node name="ButtonClick" parent="." instance=ExtResource("2_tyypw")]
 
 [node name="Panel" type="ColorRect" parent="."]
 anchors_preset = 15

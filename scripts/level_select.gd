@@ -1,4 +1,6 @@
 extends Control
+
+@export var button_click : AudioStreamPlayer2D
 @export var level1 : Button
 @export var level2 : Button
 @export var level3 : Button
@@ -42,49 +44,81 @@ func _ready() -> void:
 		array[l].show()
 
 func _on_back_button_pressed() -> void:
+	button_click.play()
+	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/main_menu.tscn")
 
 func _on_level_1_button_pressed() -> void:
+	button_click.play()
+	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_1.tscn")
 
 func _on_level_2_button_pressed():
+	button_click.play()
+	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_2.tscn")
 
 func _on_level_3_button_pressed():
+	button_click.play()
+	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_3.tscn")
 
 func _on_level_10_button_pressed():
+	button_click.play()
+	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_10.tscn")
 
 func _on_level_4_button_pressed():
+	button_click.play()
+	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_4.tscn")
 
 func _on_level_5_button_pressed():
+	button_click.play()
+	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_5.tscn")
 
 func _on_level_6_button_pressed():
+	button_click.play()
+	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_6.tscn")
 
 func _on_level_7_button_pressed():
+	button_click.play()
+	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_7.tscn")
 
 func _on_level_8_button_pressed():
+	button_click.play()
+	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_8.tscn")
 
 func _on_level_9_button_pressed():
+	button_click.play()
+	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_9.tscn")
 
 func _on_level_12_button_pressed():
+	button_click.play()
+	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_12.tscn")
 
 func _on_level_11_button__pressed():
+	button_click.play()
+	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_11.tscn")
 
 func _on_level_13_button_pressed():
+	button_click.play()
+	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_13.tscn")
 
 func _on_level_14_button_pressed():
+	button_click.play()
+	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_14.tscn")
 
 func _on_level_15_button_pressed():
+	button_click.play()
+	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_15.tscn")
