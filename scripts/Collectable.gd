@@ -17,4 +17,5 @@ func _on_body_entered(body):
 	if collected == false:
 		collected = true
 		$CollectedSound.play()
+		SaveSystem.saving()
 	pass
