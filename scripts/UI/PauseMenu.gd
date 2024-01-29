@@ -22,6 +22,7 @@ func _on_settings_button_pressed() -> void:
 	settings.visible = true
 
 func _on_quit_button_pressed() -> void:
+	MusicController.get_node("Music").stop()
 	button_click.play()
 	visible = false
 	get_tree().paused = false

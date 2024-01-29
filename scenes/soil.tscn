@@ -1,8 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://uscf2pnv0pja"]
 
-[ext_resource type="Script" path="res://scenes/soil.gd" id="1_d52eu"]
+[ext_resource type="Script" path="res://scripts/soil.gd" id="1_d52eu"]
 [ext_resource type="Texture2D" uid="uid://cwcvo8bsh2m6u" path="res://icon.svg" id="1_oo6sa"]
 [ext_resource type="FontFile" uid="uid://gjss8fmy13x2" path="res://assets/fonts/dpcomic.ttf" id="3_yeh08"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_als34"]
 size = Vector2(12, 20)

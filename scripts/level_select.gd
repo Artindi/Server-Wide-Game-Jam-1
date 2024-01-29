@@ -39,9 +39,7 @@ func _ready() -> void:
 	SaveSystem.load_game()
 	# sifts through the level variable to see if certain levels are unlocked and shows them if they are
 	for i in SaveSystem.save_game.level:
-		# arrays read 0-x and it needs to reed the 15th entry which is level 15 and has the variable level at 15 and the highest value in the array is 14 so everything needs to go down by one
-		var l = i - 1
-		array[l].show()
+		array[i].show()
 
 func _on_back_button_pressed() -> void:
 	button_click.play()
@@ -49,76 +47,91 @@ func _on_back_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/screens/main_menu.tscn")
 
 func _on_level_1_button_pressed() -> void:
+	MusicController.get_node("Music").stop()
 	button_click.play()
 	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_1.tscn")
 
 func _on_level_2_button_pressed():
+	MusicController.get_node("Music").stop()
 	button_click.play()
 	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_2.tscn")
 
 func _on_level_3_button_pressed():
+	MusicController.get_node("Music").stop()
 	button_click.play()
 	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_3.tscn")
 
 func _on_level_10_button_pressed():
+	MusicController.get_node("Music").stop()
 	button_click.play()
 	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_10.tscn")
 
 func _on_level_4_button_pressed():
+	MusicController.get_node("Music").stop()
 	button_click.play()
 	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_4.tscn")
 
 func _on_level_5_button_pressed():
+	MusicController.get_node("Music").stop()
 	button_click.play()
 	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_5.tscn")
 
 func _on_level_6_button_pressed():
+	MusicController.get_node("Music").stop()
 	button_click.play()
 	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_6.tscn")
 
 func _on_level_7_button_pressed():
+	MusicController.get_node("Music").stop()
 	button_click.play()
 	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_7.tscn")
 
 func _on_level_8_button_pressed():
+	MusicController.get_node("Music").stop()
 	button_click.play()
 	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_8.tscn")
 
 func _on_level_9_button_pressed():
+	MusicController.get_node("Music").stop()
 	button_click.play()
 	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_9.tscn")
 
 func _on_level_12_button_pressed():
+	MusicController.get_node("Music").stop()
 	button_click.play()
 	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_12.tscn")
 
 func _on_level_11_button__pressed():
+	MusicController.get_node("Music").stop()
 	button_click.play()
 	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_11.tscn")
 
 func _on_level_13_button_pressed():
+	MusicController.get_node("Music").stop()
 	button_click.play()
 	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_13.tscn")
 
 func _on_level_14_button_pressed():
+	MusicController.get_node("Music").stop()
 	button_click.play()
 	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_14.tscn")
 
 func _on_level_15_button_pressed():
+	MusicController.get_node("Music").stop()
 	button_click.play()
 	await get_tree().create_timer(0.15).timeout
 	get_tree().change_scene_to_file("res://scenes/screens/levels/level_15.tscn")
