@@ -39,9 +39,8 @@ range_layer_min = -500
 shadow_enabled = true
 
 [node name="Camera2D" parent="." index="9" instance=ExtResource("3_5ulcc")]
-visible = false
 position = Vector2(-104, 128)
 limit_left = -157
 limit_top = -112
-limit_right = 600
+limit_right = 539
 limit_bottom = 182
