@@ -236,6 +236,7 @@ bus = &"SFX"
 
 [node name="GrowSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_oko0v")
+volume_db = 4.0
 bus = &"SFX"
 
 [connection signal="timeout" from="growth_timer" to="." method="_on_growth_timer_timeout"]

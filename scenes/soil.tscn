@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://uscf2pnv0pja"]
+
+[ext_resource type="Script" path="res://scenes/soil.gd" id="1_d52eu"]
+[ext_resource type="Texture2D" uid="uid://cwcvo8bsh2m6u" path="res://icon.svg" id="1_oo6sa"]
+[ext_resource type="FontFile" uid="uid://gjss8fmy13x2" path="res://assets/fonts/dpcomic.ttf" id="3_yeh08"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_als34"]
+size = Vector2(12, 20)
+
+[node name="Soil" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_d52eu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.38419e-07, 2.38419e-07)
+scale = Vector2(0.11084, 0.161164)
+texture = ExtResource("1_oo6sa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_als34")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -4.0
+offset_top = -6.0
+offset_right = 23.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("3_yeh08")
+theme_override_font_sizes/font_size = 15
+text = "3"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

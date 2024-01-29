@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dce7b2xtppv4i"]
+
+[ext_resource type="Script" path="res://scripts/music_controller.gd" id="1_0u2f2"]
+
+[node name="MusicController" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_0u2f2")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+volume_db = 16.0
+bus = &"Music"
