@@ -31,7 +31,7 @@ layer_2/tile_data = PackedInt32Array(458767, 65538, 4, 458768, 196610, 4, 131098
 position = Vector2(24, -72)
 
 [node name="GrowthLight2" parent="." index="7" instance=ExtResource("2_bujee")]
-position = Vector2(40, -72)
+position = Vector2(216, 40)
 
 [node name="GrowthLight3" parent="." index="8" instance=ExtResource("2_bujee")]
 position = Vector2(-104, -296)
