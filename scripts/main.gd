@@ -5,7 +5,8 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SaveSystem.load_game()
-	MusicController.play_music("res://assets/soundFX/bwahhhhhhhh.mp3")
+	if !MusicController.get_node("Music").is_playing():
+		MusicController.play_music("res://assets/soundFX/bwahhhhhhhh.mp3")
 
 func _on_quit_button_pressed() -> void:
 	button_click.play()

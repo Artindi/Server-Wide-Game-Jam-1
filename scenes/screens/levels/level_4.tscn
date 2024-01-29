@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b18ilc1cpfgyo"]
 
 [ext_resource type="PackedScene" uid="uid://bn6f7ca4bl2ie" path="res://scenes/screens/levels/template.tscn" id="1_kukaf"]
-[ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/Player/Custom_camera.tscn" id="2_r0o1j"]
+[ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/player/Custom_camera.tscn" id="2_r0o1j"]
 [ext_resource type="Texture2D" uid="uid://o41m22kvca5w" path="res://assets/images/bg_level_4_1.png" id="2_u7shw"]
 [ext_resource type="PackedScene" uid="uid://bdkgiqelqw5du" path="res://scenes/concrete_tile_map.tscn" id="3_yrwpa"]
 [ext_resource type="Texture2D" uid="uid://bwwr4i274fgp" path="res://assets/images/bg_level_4_2.png" id="5_r6jro"]
