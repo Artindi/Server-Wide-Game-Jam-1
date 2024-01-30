@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnx876j75t7nc"]
+[gd_scene load_steps=7 format=3 uid="uid://dnx876j75t7nc"]
 
 [ext_resource type="PackedScene" uid="uid://bn6f7ca4bl2ie" path="res://scenes/screens/levels/template.tscn" id="1_xb5ie"]
 [ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/player/Custom_camera.tscn" id="2_mqiee"]
 [ext_resource type="PackedScene" uid="uid://bdkgiqelqw5du" path="res://scenes/concrete_tile_map.tscn" id="3_y22al"]
 [ext_resource type="PackedScene" uid="uid://j4mbimua5ljl" path="res://resources/parallax_background.tscn" id="4_4g7nw"]
 [ext_resource type="PackedScene" uid="uid://cf2t25cjey3n6" path="res://resources/directional_light_2d.tscn" id="5_cki5r"]
+[ext_resource type="PackedScene" uid="uid://b72dkcfp1mghu" path="res://scenes/collectable.tscn" id="6_ooggs"]
 
 [node name="Level 5" instance=ExtResource("1_xb5ie")]
 
@@ -16,6 +17,9 @@ layer_2/tile_data = PackedInt32Array(458754, 196610, 20, 458755, 262146, 20, 262
 [node name="Objective" parent="." index="1"]
 position = Vector2(352, -134)
 next_level = 6
+
+[node name="Win Screen" parent="." index="3" node_paths=PackedStringArray("collectables")]
+collectables = [NodePath("../Collectible")]
 
 [node name="Player" parent="." index="4"]
 position = Vector2(88, 104)
@@ -48,5 +52,9 @@ limit_left = -100
 limit_top = -80
 limit_right = 500
 limit_bottom = 180
+
+[node name="Collectible" parent="." index="10" instance=ExtResource("6_ooggs")]
+position = Vector2(287, 1)
+metadata/flag = "05-01"
 
 [editable path="ParallaxBackground"]
