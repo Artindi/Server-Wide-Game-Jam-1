@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b18ilc1cpfgyo"]
 
 [ext_resource type="PackedScene" uid="uid://bn6f7ca4bl2ie" path="res://scenes/screens/levels/template.tscn" id="1_kukaf"]
-[ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/player/Custom_camera.tscn" id="2_r0o1j"]
+[ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/Player/Custom_camera.tscn" id="2_r0o1j"]
 [ext_resource type="Texture2D" uid="uid://o41m22kvca5w" path="res://assets/images/bg_level_4_1.png" id="2_u7shw"]
 [ext_resource type="PackedScene" uid="uid://bdkgiqelqw5du" path="res://scenes/concrete_tile_map.tscn" id="3_yrwpa"]
 [ext_resource type="Texture2D" uid="uid://bwwr4i274fgp" path="res://assets/images/bg_level_4_2.png" id="5_r6jro"]
@@ -13,7 +13,7 @@ layer_0/tile_data = PackedInt32Array(393223, 655362, 18, 393224, 720898, 18, 393
 layer_1/tile_data = PackedInt32Array(17, 917506, 268435475, 16, 983042, 268435475, 65553, 917506, 268435476, 65552, 983042, 268435476)
 
 [node name="Objective" parent="." index="1"]
-position = Vector2(80, -225)
+position = Vector2(80, -176)
 next_level = 5
 
 [node name="Player" parent="." index="4"]
@@ -22,7 +22,7 @@ position = Vector2(72, 88)
 [node name="Camera2D" parent="." index="5" instance=ExtResource("2_r0o1j")]
 position = Vector2(72, 88)
 limit_left = -50
-limit_top = -157
+limit_top = -160
 limit_right = 382
 
 [node name="Concrete" parent="." index="6" instance=ExtResource("3_yrwpa")]
