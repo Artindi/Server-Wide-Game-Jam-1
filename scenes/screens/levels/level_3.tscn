@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dxr680sag1irk"]
 
 [ext_resource type="PackedScene" uid="uid://bn6f7ca4bl2ie" path="res://scenes/screens/levels/template.tscn" id="1_binx7"]
-[ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/player/Custom_camera.tscn" id="2_ju722"]
+[ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/Player/Custom_camera.tscn" id="2_ju722"]
 [ext_resource type="PackedScene" uid="uid://j4mbimua5ljl" path="res://resources/parallax_background.tscn" id="3_t5uyi"]
 [ext_resource type="Texture2D" uid="uid://chkl0onuprcc4" path="res://assets/images/bg_level_3_4.png" id="4_snaoo"]
 [ext_resource type="Texture2D" uid="uid://rwnbkisxhk7e" path="res://assets/images/bg_level_3_3.png" id="5_x2g58"]
