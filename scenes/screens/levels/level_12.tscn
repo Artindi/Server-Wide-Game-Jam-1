@@ -34,6 +34,7 @@ limit_left = 55
 limit_top = -65
 limit_right = 511
 limit_bottom = 336
+limit_smoothed = true
 
 [node name="Saws" type="Node2D" parent="." index="8"]
 

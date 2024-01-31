@@ -183,6 +183,7 @@ limit_left = 75
 limit_top = -48
 limit_right = 880
 limit_bottom = 135
+limit_smoothed = true
 
 [node name="Collectible" parent="." index="10" instance=ExtResource("6_odqsf")]
 position = Vector2(376, 104)

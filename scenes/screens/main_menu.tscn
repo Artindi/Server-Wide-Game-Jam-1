@@ -70,6 +70,10 @@ texture = ExtResource("5_liw5k")
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.4, 0.4)
 
+[node name="EnRootLogoWithFlower-export" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(318, 208)
+texture = ExtResource("15_3nfno")
+
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2(640, 360)
 scale = Vector2(4, 4)
@@ -129,10 +133,6 @@ offset_right = 384.0
 offset_bottom = 262.0
 grow_vertical = 2
 theme = SubResource("Theme_nf1io")
-
-[node name="EnRootLogoWithFlower-export" type="Sprite2D" parent="CanvasLayer/VBoxContainer"]
-position = Vector2(156, -226)
-texture = ExtResource("15_3nfno")
 
 [node name="PlayButton" type="Button" parent="CanvasLayer/VBoxContainer"]
 custom_minimum_size = Vector2(250, 0)
