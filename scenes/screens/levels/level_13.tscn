@@ -48,6 +48,7 @@ position = Vector2(232, -168)
 position = Vector2(144, 127)
 limit_left = 0
 limit_right = 350
+limit_smoothed = true
 
 [node name="Concrete" parent="." index="8" instance=ExtResource("4_qrg2w")]
 position = Vector2(48, 49)

@@ -56,6 +56,7 @@ limit_left = 20
 limit_top = -87
 limit_right = 1050
 limit_bottom = 180
+limit_smoothed = true
 
 [node name="Collectible" parent="." index="8" instance=ExtResource("4_rc0d2")]
 position = Vector2(776, -56)
