@@ -1,4 +1,4 @@
 extends Control
 
-func _on_button_pressed():
-	get_tree().quit(0)
+func _ready() -> void:
+	MusicController.play_music("res://assets/soundFX/jig2nointro.mp3")
