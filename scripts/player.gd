@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
+@export var disable_movement : bool = false
+
 @export var sections : Node2D
 @export var foot_collision : CollisionShape2D
 @export var headSprite : Sprite2D
@@ -57,21 +59,22 @@ func _physics_process(delta) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("Left", "Right")
-	
-	if direction:
-		velocity.x = direction * SPEED
-		if velocity.x > 0:
-			head_animation.play("looking_right")
-			foot_animation.play("walking_right")
-		if velocity.x < 0:
-			head_animation.play("looking_left")
-			foot_animation.play("walking_left")
-		if walking_sound.playing == false:
-			walking_sound.play()
-	elif !direction:
-		walking_sound.stop()
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	if !disable_movement:
+		var direction = Input.get_axis("Left", "Right")
+		
+		if direction:
+			velocity.x = direction * SPEED
+			if velocity.x > 0:
+				head_animation.play("looking_right")
+				foot_animation.play("walking_right")
+			if velocity.x < 0:
+				head_animation.play("looking_left")
+				foot_animation.play("walking_left")
+			if walking_sound.playing == false:
+				walking_sound.play()
+		elif !direction:
+			walking_sound.stop()
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	#this fixes a bug that causes the plant to break when standing on an edge
 	if velocity.x == 0:

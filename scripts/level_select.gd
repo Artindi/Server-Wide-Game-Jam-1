@@ -39,7 +39,10 @@ func _ready() -> void:
 	SaveSystem.load_game()
 	# sifts through the level variable to see if certain levels are unlocked and shows them if they are
 	for i in SaveSystem.save_game.level:
-		array[i].show()
+		var l = i - 1
+		if l == -1:
+			l = 0
+		array[l].show()
 
 func _on_back_button_pressed() -> void:
 	button_click.play()

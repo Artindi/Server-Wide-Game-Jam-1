@@ -96,10 +96,10 @@ energy = 0.2
 shadow_enabled = true
 
 [node name="GrowthLight3" parent="." index="11" instance=ExtResource("6_yjv3r")]
-position = Vector2(312, -86)
+position = Vector2(312, -88)
 
 [node name="GrowthLight4" parent="." index="12" instance=ExtResource("6_yjv3r")]
-position = Vector2(216, -278)
+position = Vector2(216, -280)
 
 [node name="Collectible" parent="." index="13" instance=ExtResource("7_al2si")]
 position = Vector2(40, -104)
