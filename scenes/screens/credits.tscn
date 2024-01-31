@@ -1,48 +1,42 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8t1p74xvxj5d"]
+[gd_scene load_steps=7 format=3 uid="uid://c8t1p74xvxj5d"]
 
 [ext_resource type="Script" path="res://scripts/credits.gd" id="1_0nv5m"]
 [ext_resource type="FontFile" uid="uid://gjss8fmy13x2" path="res://assets/fonts/dpcomic.ttf" id="1_rj14p"]
-[ext_resource type="PackedScene" uid="uid://2aa7gv0i0jdn" path="res://scenes/Player/player.tscn" id="2_x2sx5"]
-[ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/Player/Custom_camera.tscn" id="4_pj0qs"]
+[ext_resource type="PackedScene" uid="uid://2aa7gv0i0jdn" path="res://scenes/player/player.tscn" id="2_x2sx5"]
+[ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/player/Custom_camera.tscn" id="4_pj0qs"]
 [ext_resource type="PackedScene" uid="uid://bvv4mkgjx64bs" path="res://scenes/tile_map.tscn" id="5_drqqf"]
+[ext_resource type="Texture2D" uid="uid://wy5qgflg27or" path="res://assets/images/En_Root_logo_with_flower.png" id="6_4ujwb"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 43.0
+offset_bottom = 43.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0nv5m")
 
 [node name="Player" parent="." instance=ExtResource("2_x2sx5")]
-position = Vector2(381, 327)
-scale = Vector2(10, 10)
+position = Vector2(51, 658)
 disable_movement = true
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-scroll_offset = Vector2(548, 48)
+[node name="CollisionShape2D" parent="Player" index="1"]
+disabled = true
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.3, 0.3)
-motion_mirroring = Vector2(0, 1220)
+[node name="GrowSound" parent="Player" index="8"]
+volume_db = -4.432
 
-[node name="Label" type="Label" parent="ParallaxBackground/ParallaxLayer"]
-offset_left = 497.0
-offset_top = 18.0
-offset_right = 1269.0
-offset_bottom = 1221.0
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 229.0
+offset_right = 842.0
+offset_bottom = 1432.0
 theme_override_fonts/font = ExtResource("1_rj14p")
-theme_override_font_sizes/font_size = 70
-text = "A Game Made by the Artindi 
-       Discord Server
-
-  Coders: 
-  Artindi, Warlad, Nameless, 
-  OP-idk, BlackKnightJack, 
-  and Rowbot
-
-  Artists: 
+theme_override_font_sizes/font_size = 17
+text = "  Artists: 
   Creomaster and Hat
 
   Music: 
@@ -51,17 +45,37 @@ text = "A Game Made by the Artindi
   Playtesters: 
   Noctis, Warlad, Artindi, 
   Nameless, BlackKnightJack, 
-  and OP-idk"
+  and OP-idk
+
+  Coders: 
+  Artindi, Warlad, Nameless, 
+  OP-idk, BlackKnightJack, 
+  and Rowbot
+
+A Game Made by the Artindi 
+       Discord Server"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_offset = Vector2(548, 48)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(0, 400)
 
 [node name="Camera2D" parent="." instance=ExtResource("4_pj0qs")]
-position = Vector2(409, 406)
-zoom = Vector2(1, 1)
+position = Vector2(106, 606)
+zoom = Vector2(5, 5)
 limit_left = 0
 limit_top = 0
 limit_right = 1280
 limit_bottom = 720
 
 [node name="TileMap" parent="." instance=ExtResource("5_drqqf")]
-position = Vector2(-203, 1105)
-scale = Vector2(5, 5)
-layer_0/tile_data = PackedInt32Array(-393210, 131074, 4, -393211, 65538, 4, -393209, 131074, 4, -393208, 196610, 4)
+position = Vector2(-500, 1323)
+layer_1/tile_data = PackedInt32Array(-2621406, 2, 4)
+
+[node name="EnRootLogoWithFlower" type="Sprite2D" parent="."]
+position = Vector2(155, 631)
+texture = ExtResource("6_4ujwb")
+
+[editable path="Player"]

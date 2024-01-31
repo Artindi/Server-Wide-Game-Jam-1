@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c45qgpu3vwxop"]
+[gd_scene load_steps=17 format=3 uid="uid://c45qgpu3vwxop"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_jxads"]
 [ext_resource type="PackedScene" uid="uid://iaje23rltc2u" path="res://scenes/button_click.tscn" id="2_6qaqw"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c6sj7xjyxm4vj" path="res://assets/images/title_screen_3_1.png" id="7_8m21m"]
 [ext_resource type="Texture2D" uid="uid://dja17skcysvvv" path="res://assets/images/title_screen_4_1.png" id="9_qt7me"]
 [ext_resource type="Script" path="res://scripts/UI/menu_camera.gd" id="9_rbwre"]
+[ext_resource type="Texture2D" uid="uid://cmdmqm4vxtwdn" path="res://assets/images/En_Root_logo_with_flower-export.png" id="15_3nfno"]
 
 [sub_resource type="Theme" id="Theme_nf1io"]
 default_font = ExtResource("2_ewkas")
@@ -128,6 +129,10 @@ offset_right = 384.0
 offset_bottom = 262.0
 grow_vertical = 2
 theme = SubResource("Theme_nf1io")
+
+[node name="EnRootLogoWithFlower-export" type="Sprite2D" parent="CanvasLayer/VBoxContainer"]
+position = Vector2(156, -226)
+texture = ExtResource("15_3nfno")
 
 [node name="PlayButton" type="Button" parent="CanvasLayer/VBoxContainer"]
 custom_minimum_size = Vector2(250, 0)
