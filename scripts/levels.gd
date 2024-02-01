@@ -9,11 +9,15 @@ func _physics_process(_delta) -> void:
 		check_music()
 
 func check_music():
-	if objective.next_level <= 6:
+	if objective.next_level < 5:
 		if !MusicController.get_node("Music").is_playing():
 			MusicController.play_music("res://assets/soundFX/nayslayer.mp3")
+	elif objective.next_level <= 8:
+		if objective.next_level == 5:
+			MusicController.get_node("Music").stop()
+			MusicController.play_music("res://assets/soundFX/Plant_Music.mp3")
 	elif objective.next_level <= 11:
-		if objective.next_level == 7:
+		if objective.next_level == 9:
 			MusicController.get_node("Music").stop()
 		if !MusicController.get_node("Music").is_playing():
 			MusicController.play_music("res://assets/soundFX/godray.mp3")
@@ -24,4 +28,4 @@ func check_music():
 			MusicController.play_music("res://assets/soundFX/penguinbeep.mp3")
 	elif objective.next_level == 16:
 		MusicController.get_node("Music").stop()
-		MusicController.play_music("res://assets/soundFX/penguinbeep.mp3")
+		MusicController.play_music("res://assets/soundFX/Plant_Music.mp3")

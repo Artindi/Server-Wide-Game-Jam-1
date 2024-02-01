@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddsg41sprv3jx"]
+[gd_scene load_steps=8 format=3 uid="uid://ddsg41sprv3jx"]
 
 [ext_resource type="PackedScene" uid="uid://bn6f7ca4bl2ie" path="res://scenes/screens/levels/template.tscn" id="1_4b7bd"]
 [ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/Player/Custom_camera.tscn" id="2_bvu6d"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c72oxlg3mepok" path="res://scenes/growth_light.tscn" id="4_la6wn"]
 [ext_resource type="PackedScene" uid="uid://bdkgiqelqw5du" path="res://scenes/concrete_tile_map.tscn" id="4_qrg2w"]
 [ext_resource type="PackedScene" uid="uid://b72dkcfp1mghu" path="res://scenes/collectable.tscn" id="6_bt2ao"]
+[ext_resource type="PackedScene" uid="uid://bfrjk0dx5c8rh" path="res://resources/genaric_parallax_background.tscn" id="7_tbv1u"]
 
 [node name="Level 13" instance=ExtResource("1_4b7bd")]
 
@@ -66,3 +67,16 @@ metadata/flag = "13-01"
 [node name="Collectible2" parent="." index="11" instance=ExtResource("6_bt2ao")]
 position = Vector2(296, 152)
 metadata/flag = "13-02"
+
+[node name="ParallaxBackground" parent="." index="12" instance=ExtResource("7_tbv1u")]
+
+[node name="ParallaxLayer2" parent="ParallaxBackground" index="0"]
+position = Vector2(-48, 104)
+
+[node name="ParallaxLayer" parent="ParallaxBackground" index="1"]
+position = Vector2(-48, 104)
+
+[node name="ParallaxLayer3" parent="ParallaxBackground" index="2"]
+position = Vector2(-48, 104)
+
+[editable path="ParallaxBackground"]
