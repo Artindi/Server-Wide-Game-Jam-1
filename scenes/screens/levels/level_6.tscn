@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://drp6gbetrt5cb"]
+[gd_scene load_steps=7 format=3 uid="uid://drp6gbetrt5cb"]
 
 [ext_resource type="PackedScene" uid="uid://bn6f7ca4bl2ie" path="res://scenes/screens/levels/template.tscn" id="1_ptunk"]
 [ext_resource type="PackedScene" uid="uid://c72oxlg3mepok" path="res://scenes/growth_light.tscn" id="2_e0ko8"]
 [ext_resource type="PackedScene" uid="uid://bdkgiqelqw5du" path="res://scenes/concrete_tile_map.tscn" id="3_d3xyl"]
 [ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/Player/Custom_camera.tscn" id="4_21bqm"]
 [ext_resource type="PackedScene" uid="uid://b72dkcfp1mghu" path="res://scenes/collectable.tscn" id="5_nh6iy"]
+
 [ext_resource type="Texture2D" uid="uid://pq2l0hw4ldpw" path="res://assets/images/bg_level_6_1.png" id="6_cuocm"]
 [ext_resource type="Texture2D" uid="uid://dvdpu5aji33i4" path="res://assets/images/bg_level_6_2.png" id="7_0ojc3"]
 [ext_resource type="Texture2D" uid="uid://co1y0ddx10d4e" path="res://assets/images/bg_level_6_3.png" id="8_5dfv5"]

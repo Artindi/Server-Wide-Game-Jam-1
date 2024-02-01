@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqnixvuvi21uf"]
+[gd_scene load_steps=7 format=3 uid="uid://cqnixvuvi21uf"]
 
 [ext_resource type="PackedScene" uid="uid://bn6f7ca4bl2ie" path="res://scenes/screens/levels/template.tscn" id="1_s8svi"]
 [ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/Player/Custom_camera.tscn" id="2_frpex"]
 [ext_resource type="PackedScene" uid="uid://bdkgiqelqw5du" path="res://scenes/concrete_tile_map.tscn" id="3_lst63"]
 [ext_resource type="PackedScene" uid="uid://b72dkcfp1mghu" path="res://scenes/collectable.tscn" id="4_s3mqj"]
 [ext_resource type="PackedScene" uid="uid://c72oxlg3mepok" path="res://scenes/growth_light.tscn" id="5_kes4l"]
+[ext_resource type="PackedScene" uid="uid://bfrjk0dx5c8rh" path="res://resources/genaric_parallax_background.tscn" id="6_xtnsy"]
 
 [node name="Template" instance=ExtResource("1_s8svi")]
 
@@ -63,3 +64,16 @@ scale = Vector2(1.6779, 1.00351)
 skew = 0.067192
 energy = 0.2
 shadow_enabled = true
+
+[node name="ParallaxBackground" parent="." index="14" instance=ExtResource("6_xtnsy")]
+
+[node name="ParallaxLayer2" parent="ParallaxBackground" index="0"]
+position = Vector2(38, 127)
+
+[node name="ParallaxLayer" parent="ParallaxBackground" index="1"]
+position = Vector2(38, 127)
+
+[node name="ParallaxLayer3" parent="ParallaxBackground" index="2"]
+position = Vector2(38, 127)
+
+[editable path="ParallaxBackground"]

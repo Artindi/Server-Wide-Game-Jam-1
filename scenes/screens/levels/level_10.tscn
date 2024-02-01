@@ -29,7 +29,6 @@ layer_2/tile_data = PackedInt32Array(20, 589826, 16, 65556, 589826, 17, -5, 7864
 [node name="ParallaxBackground" parent="." index="8" instance=ExtResource("5_gmwsr")]
 
 [node name="ParallaxLayer" parent="ParallaxBackground" index="0"]
-visible = false
 motion_scale = Vector2(0.2, 0.2)
 
 [node name="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" index="0"]
