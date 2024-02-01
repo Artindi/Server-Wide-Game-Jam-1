@@ -40,7 +40,7 @@ func _ready() -> void:
 	# sifts through the level variable to see if certain levels are unlocked and shows them if they are
 	for i in SaveSystem.save_game.level:
 		var l = i - 1
-		if l == -1:
+		if l == -1 and !SaveSystem.save_game.level == 15:
 			l = 0
 		array[l].show()
 
