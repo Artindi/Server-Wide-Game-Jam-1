@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c72oxlg3mepok" path="res://scenes/growth_light.tscn" id="4_la6wn"]
 [ext_resource type="PackedScene" uid="uid://bdkgiqelqw5du" path="res://scenes/concrete_tile_map.tscn" id="4_qrg2w"]
 [ext_resource type="PackedScene" uid="uid://b72dkcfp1mghu" path="res://scenes/collectable.tscn" id="6_bt2ao"]
-[ext_resource type="PackedScene" uid="uid://bfrjk0dx5c8rh" path="res://resources/genaric_parallax_background.tscn" id="7_tbv1u"]
+[ext_resource type="PackedScene" path="res://resources/genaric_parallax_background.tscn" id="7_tbv1u"]
 
 [node name="Level 13" instance=ExtResource("1_4b7bd")]
 

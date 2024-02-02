@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dip5clb4pxtu1" path="res://scenes/Saw.tscn" id="2_omojl"]
 [ext_resource type="PackedScene" uid="uid://bdkgiqelqw5du" path="res://scenes/concrete_tile_map.tscn" id="3_a6d28"]
 [ext_resource type="PackedScene" uid="uid://b72dkcfp1mghu" path="res://scenes/collectable.tscn" id="5_c2fhq"]
-[ext_resource type="PackedScene" uid="uid://bfrjk0dx5c8rh" path="res://resources/genaric_parallax_background.tscn" id="6_m16u0"]
+[ext_resource type="PackedScene" path="res://resources/genaric_parallax_background.tscn" id="6_m16u0"]
 
 [node name="Level 12" instance=ExtResource("1_rs15p")]
 
