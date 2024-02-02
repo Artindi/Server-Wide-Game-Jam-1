@@ -15,6 +15,7 @@ func check_music():
 	elif objective.next_level <= 8:
 		if objective.next_level == 5:
 			MusicController.get_node("Music").stop()
+		if !MusicController.get_node("Music").is_playing():
 			MusicController.play_music("res://assets/soundFX/Plant_Music.mp3")
 	elif objective.next_level <= 11:
 		if objective.next_level == 9:

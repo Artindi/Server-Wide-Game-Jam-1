@@ -3,8 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://bn6f7ca4bl2ie" path="res://scenes/screens/levels/template.tscn" id="1_kbedu"]
 [ext_resource type="PackedScene" uid="uid://cxqqdmwe1qd68" path="res://scenes/screens/win_screen.tscn" id="2_6i7yu"]
 [ext_resource type="PackedScene" uid="uid://j4mbimua5ljl" path="res://resources/parallax_background.tscn" id="2_sdgfv"]
-[ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/Player/Custom_camera.tscn" id="3_5ulcc"]
+
+[ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/player/Custom_camera.tscn" id="3_5ulcc"]
 [ext_resource type="PackedScene" uid="uid://b72dkcfp1mghu" path="res://scenes/collectable.tscn" id="5_2gw3r"]
+
 
 [node name="Level 2" instance=ExtResource("1_kbedu")]
 
