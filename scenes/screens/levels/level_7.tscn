@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqnixvuvi21uf"]
+[gd_scene load_steps=9 format=3 uid="uid://cqnixvuvi21uf"]
 
 [ext_resource type="PackedScene" uid="uid://bn6f7ca4bl2ie" path="res://scenes/screens/levels/template.tscn" id="1_s8svi"]
 [ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/Player/Custom_camera.tscn" id="2_frpex"]
 [ext_resource type="PackedScene" uid="uid://bdkgiqelqw5du" path="res://scenes/concrete_tile_map.tscn" id="3_lst63"]
 [ext_resource type="PackedScene" uid="uid://b72dkcfp1mghu" path="res://scenes/collectable.tscn" id="4_s3mqj"]
 [ext_resource type="PackedScene" uid="uid://c72oxlg3mepok" path="res://scenes/growth_light.tscn" id="5_kes4l"]
+[ext_resource type="Texture2D" uid="uid://60m4tqo71rlg" path="res://assets/images/bg_level_7_3.png" id="6_wiagw"]
+[ext_resource type="Texture2D" uid="uid://64yegh1cfcxu" path="res://assets/images/bg_level_7_2.png" id="7_q4kug"]
+[ext_resource type="Texture2D" uid="uid://cmk5oafpjgutu" path="res://assets/images/bg_level_7_1.png" id="8_j68px"]
 
 [node name="Template" instance=ExtResource("1_s8svi")]
 
@@ -14,7 +17,7 @@ layer_1/tile_data = PackedInt32Array(851984, 262146, 19, 786448, 262146, 18, 720
 layer_2/tile_data = PackedInt32Array(851988, 786434, 15, 851989, 851970, 15, 196630, 524290, 15, 262177, 655362, 14, 262176, 655362, 13, 851980, 655362, 13, 196625, 589826, 19, 262161, 589826, 17, 262162, 655362, 17, 262163, 655362, 17, 262164, 720898, 17, 196628, 720898, 16, 196626, 655362, 16, 196627, 655362, 16, 24, 1179650, 17, 65560, 1179650, 18, 25, 1245186, 17, 65561, 1245186, 18, 786456, 1179650, 17, 851992, 1179650, 18, 786457, 1245186, 17, 851993, 1245186, 18, 327686, 917506, 17, 393222, 917506, 18, 327687, 983042, 17, 393223, 983042, 18, -327679, 917506, 17, -262143, 917506, 18, -327678, 983042, 17, -262142, 983042, 18, 589830, 917506, 17, 655366, 917506, 18, 589831, 983042, 17, 655367, 983042, 18, 196624, 524290, 19, 917513, 655362, 19, 917514, 720898, 19, 720903, 786434, 21, 786439, 786434, 22, 720904, 851970, 21, 786440, 851970, 22, 524297, 1310722, 19, 589833, 1310722, 20, 524298, 1376258, 19, 589834, 1376258, 20, 393218, 524290, 18, 393219, 589826, 18, 5, 524290, 13, 65541, 524290, 14, 6, 589826, 13, 65542, 589826, 14, 262172, 786434, 14, 262173, 851970, 14, 851982, 786434, 14, 851983, 851970, 14, 393227, 655362, 11, 393228, 720898, 11)
 
 [node name="Objective" parent="." index="1"]
-position = Vector2(302, -146)
+position = Vector2(302, -181)
 scale = Vector2(1.68, 1)
 next_level = 8
 
@@ -63,3 +66,26 @@ scale = Vector2(1.6779, 1.00351)
 skew = 0.067192
 energy = 0.2
 shadow_enabled = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="14"]
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+motion_scale = Vector2(0, 0)
+
+[node name="BgLevel71" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3" index="0"]
+position = Vector2(235, 104)
+texture = ExtResource("6_wiagw")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" index="1"]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="BgLevel71" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" index="0"]
+position = Vector2(229, 62)
+texture = ExtResource("7_q4kug")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="2"]
+motion_scale = Vector2(0.8, 0.8)
+
+[node name="BgLevel71" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" index="0"]
+position = Vector2(239, 96)
+texture = ExtResource("8_j68px")
