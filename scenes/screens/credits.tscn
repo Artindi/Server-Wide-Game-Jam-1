@@ -1,14 +1,12 @@
-[gd_scene load_steps=19 format=3 uid="uid://c8t1p74xvxj5d"]
+[gd_scene load_steps=21 format=3 uid="uid://c8t1p74xvxj5d"]
 
 [ext_resource type="Script" path="res://scripts/credits.gd" id="1_0nv5m"]
 [ext_resource type="FontFile" uid="uid://gjss8fmy13x2" path="res://assets/fonts/dpcomic.ttf" id="1_rj14p"]
-[ext_resource type="PackedScene" uid="uid://2aa7gv0i0jdn" path="res://scenes/player/player.tscn" id="2_x2sx5"]
-[ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/player/Custom_camera.tscn" id="4_pj0qs"]
+[ext_resource type="PackedScene" uid="uid://2aa7gv0i0jdn" path="res://scenes/Player/player.tscn" id="2_x2sx5"]
+[ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/Player/Custom_camera.tscn" id="4_pj0qs"]
 [ext_resource type="PackedScene" uid="uid://bvv4mkgjx64bs" path="res://scenes/tile_map.tscn" id="5_drqqf"]
 [ext_resource type="Texture2D" uid="uid://wy5qgflg27or" path="res://assets/images/En_Root_logo_with_flower.png" id="6_4ujwb"]
 [ext_resource type="Script" path="res://scripts/credits_exit.gd" id="7_ktnec"]
-[ext_resource type="Texture2D" uid="uid://dxklqc14ijc7t" path="res://assets/images/bg_level_1.png" id="8_8v25o"]
-[ext_resource type="Texture2D" uid="uid://cr8ur55lid8re" path="res://assets/images/bg_level_2_3.png" id="9_30n4m"]
 [ext_resource type="Texture2D" uid="uid://c6sj7xjyxm4vj" path="res://assets/images/title_screen_3_1.png" id="10_l1uaq"]
 [ext_resource type="Texture2D" uid="uid://b0ki3yaqrkum2" path="res://assets/images/title_screen_1_1.png" id="10_pbfp7"]
 [ext_resource type="Texture2D" uid="uid://cr3vl6iyof43d" path="res://assets/images/title_screen_1.png" id="10_reai5"]
@@ -16,7 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://bfb18xrbmgfc" path="res://assets/images/title_screen_3.png" id="11_qydi4"]
 [ext_resource type="Texture2D" uid="uid://dja17skcysvvv" path="res://assets/images/title_screen_4_1.png" id="14_rdcmj"]
 [ext_resource type="Texture2D" uid="uid://2n17jsqjvtdc" path="res://assets/images/title_screen_5.png" id="16_2mdul"]
+[ext_resource type="Texture2D" uid="uid://dhdf0kvciesgo" path="res://assets/images/characters/head2.png" id="16_ap3ji"]
+[ext_resource type="Texture2D" uid="uid://kup4jkg8gow3" path="res://assets/images/characters/Feet1.png" id="17_7oglh"]
 [ext_resource type="Texture2D" uid="uid://c80bd2mui1fqh" path="res://assets/images/icon.png" id="17_lqw8t"]
+[ext_resource type="Texture2D" uid="uid://cxy7f2e0t6ats" path="res://assets/images/characters/Pot_with_green.png" id="18_vmrwc"]
+[ext_resource type="Texture2D" uid="uid://thmliibhs7io" path="res://assets/images/characters/legs_with_green.png" id="19_ghmsn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aw3ns"]
 size = Vector2(77.5, 80)
@@ -40,12 +42,12 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1.0
-offset_top = -42.0
+offset_top = 55.0
 offset_right = 1.0
-offset_bottom = 338.0
+offset_bottom = 435.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.054902, 0.0980392, 0.0705882, 1)
 
 [node name="TitleScreen1" type="Sprite2D" parent="."]
 position = Vector2(129, 31.5)
@@ -83,7 +85,7 @@ scale = Vector2(0.669271, 0.688679)
 texture = ExtResource("16_2mdul")
 
 [node name="Player" parent="." instance=ExtResource("2_x2sx5")]
-position = Vector2(40, 1020)
+position = Vector2(41, 959)
 disable_movement = true
 
 [node name="GrowSound" parent="Player" index="8"]
@@ -91,14 +93,18 @@ volume_db = -4.432
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 77.0
-offset_top = 264.0
-offset_right = 782.0
-offset_bottom = 2555.0
+offset_left = 57.0
+offset_top = 127.0
+offset_right = 786.0
+offset_bottom = 3038.0
 scale = Vector2(0.25, 0.25)
 theme_override_fonts/font = ExtResource("1_rj14p")
 theme_override_font_sizes/font_size = 64
-text = " Level Design:
+text = "
+Additional Contributors:
+  Summer, Minoumao
+
+Level Design:
   Artindi, Nameless, 
   BlackKnighJack, Warlad
 
@@ -107,10 +113,9 @@ text = " Level Design:
 
 
 
-
-
  Artists: 
-  Creomaster and Hat
+  The Escapegoat, Creomaster 
+  and Hat
 
  Music: 
   Simon Smellmont and Hat
@@ -119,7 +124,6 @@ text = " Level Design:
   Noctis, Warlad, Artindi, 
   Nameless, BlackKnightJack, 
   and OP-idk
-
 
 
 
@@ -144,20 +148,19 @@ motion_scale = Vector2(0.3, 0.3)
 motion_mirroring = Vector2(0, 400)
 
 [node name="Camera2D" parent="." instance=ExtResource("4_pj0qs")]
-position = Vector2(40, 1020)
+position = Vector2(41, 951)
 zoom = Vector2(5, 5)
 limit_left = 0
 limit_top = 0
 limit_right = 1280
-limit_bottom = 1100
+limit_bottom = 1037
 
 [node name="TileMap" parent="." instance=ExtResource("5_drqqf")]
 position = Vector2(-499, 1700)
-layer_0/tile_data = PackedInt32Array(-2686945, 65538, 4, -2686944, 131074, 4, -2686943, 131074, 4, -2686942, 131074, 4, -2686941, 131074, 4, -2686940, 131074, 4, -2686939, 131074, 4, -2686938, 131074, 4, -2686937, 131074, 4, -2686936, 131074, 4, -2686935, 131074, 4, -2686934, 131074, 4, -2686933, 131074, 4, -2686932, 131074, 4, -2686931, 131074, 4, -2686930, 131074, 4, -2686929, 196610, 4)
-layer_1/tile_data = PackedInt32Array(-2686945, 65538, 4, -2686944, 131074, 4, -2686943, 131074, 4, -2686942, 131074, 4, -2686941, 131074, 4, -2686940, 131074, 4, -2686939, 131074, 4, -2686938, 131074, 4, -2686937, 131074, 4, -2686936, 131074, 4, -2686935, 131074, 4, -2686934, 131074, 4, -2686933, 131074, 4, -2686932, 131074, 4, -2686931, 131074, 4, -2686930, 131074, 4, -2686929, 196610, 4)
+layer_1/tile_data = PackedInt32Array(-2949089, 65538, 4, -2949088, 131074, 4, -2949087, 131074, 4, -2949086, 131074, 4, -2949085, 131074, 4, -2949084, 131074, 4, -2949083, 131074, 4, -2949082, 131074, 4, -2949081, 131074, 4, -2949080, 131074, 4, -2949079, 131074, 4, -2949078, 131074, 4, -2949077, 131074, 4, -2949076, 131074, 4, -2949075, 131074, 4, -2949074, 196610, 4)
 
 [node name="EnRootLogoWithFlower" type="Sprite2D" parent="."]
-position = Vector2(156, 877)
+position = Vector2(137, 791)
 texture = ExtResource("6_4ujwb")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -169,20 +172,26 @@ script = ExtResource("7_ktnec")
 position = Vector2(40, -81)
 shape = SubResource("RectangleShape2D_aw3ns")
 
-[node name="BgLevel1" type="Sprite2D" parent="."]
-position = Vector2(172, 381)
-scale = Vector2(0.181279, 0.196372)
-texture = ExtResource("8_8v25o")
-
-[node name="BgLevel23" type="Sprite2D" parent="."]
-position = Vector2(151, 208)
-scale = Vector2(0.219638, 0.202245)
-texture = ExtResource("9_30n4m")
-
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(159, 661)
+position = Vector2(137, 567)
 scale = Vector2(0.273437, 0.25664)
 texture = ExtResource("17_lqw8t")
+
+[node name="Head2" type="Sprite2D" parent="."]
+position = Vector2(97, 279)
+texture = ExtResource("16_ap3ji")
+
+[node name="Feet1" type="Sprite2D" parent="."]
+position = Vector2(97, 295)
+texture = ExtResource("17_7oglh")
+
+[node name="PotWithGreen" type="Sprite2D" parent="."]
+position = Vector2(177, 279)
+texture = ExtResource("18_vmrwc")
+
+[node name="LegsWithGreen" type="Sprite2D" parent="."]
+position = Vector2(177, 295)
+texture = ExtResource("19_ghmsn")
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Server Wide Game Jam 1"
 run/main_scene="res://scenes/screens/main_menu.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://assets/images/icon.png"
 "<<<<<<<HEAD[display]window/size/viewport_width"=1280
 window/size/viewport_height=720

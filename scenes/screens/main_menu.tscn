@@ -146,6 +146,13 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Settings"
 
+[node name="Credits" type="Button" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Credits
+"
+
 [node name="QuitButton" type="Button" parent="CanvasLayer/VBoxContainer"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
@@ -164,4 +171,5 @@ grow_vertical = 2
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
