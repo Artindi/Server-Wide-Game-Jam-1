@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://bn6f7ca4bl2ie" path="res://scenes/screens/levels/template.tscn" id="1_ffd0p"]
 [ext_resource type="PackedScene" uid="uid://c72oxlg3mepok" path="res://scenes/growth_light.tscn" id="2_bujee"]
 [ext_resource type="PackedScene" uid="uid://bdkgiqelqw5du" path="res://scenes/concrete_tile_map.tscn" id="3_4xjvv"]
-[ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/Player/Custom_camera.tscn" id="4_coly7"]
+[ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/player/Custom_camera.tscn" id="4_coly7"]
 [ext_resource type="PackedScene" uid="uid://b72dkcfp1mghu" path="res://scenes/collectable.tscn" id="5_pir3i"]
-[ext_resource type="PackedScene" path="res://resources/genaric_parallax_background.tscn" id="6_j4kqq"]
+[ext_resource type="PackedScene" uid="uid://bfrjk0dx5c8rh" path="res://resources/genaric_parallax_background.tscn" id="6_j4kqq"]
 [ext_resource type="Texture2D" uid="uid://d0if5b835f6w7" path="res://assets/images/bg_level_8_2.png" id="7_07xt6"]
 [ext_resource type="Texture2D" uid="uid://cx30mti2qonnr" path="res://assets/images/bg_level_8_1.png" id="7_ip3ly"]
 
@@ -17,7 +17,7 @@ layer_1/tile_data = PackedInt32Array(131086, 2, 16, 196622, 2, 17, 262158, 26214
 layer_2/tile_data = PackedInt32Array(-458751, 655362, 17, -524286, 1507330, 17, -524287, 1441794, 17, -458750, 655362, 17, 262167, 786434, 11, 327703, 786434, 12, 393239, 786434, 13, 262168, 851970, 11, 327704, 851970, 12, 393240, 851970, 13, -655346, 786434, 11, -589810, 786434, 12, -524274, 786434, 13, -655345, 851970, 11, -589809, 851970, 12, -524273, 851970, 13, -131076, 655362, 11, -131075, 720898, 11, -524282, 655362, 12, -524281, 720898, 12, -65515, 720898, 13, 393234, 720898, 13, 393223, 720898, 13, 327679, 720898, 13, -131082, 720898, 13, -458755, 720898, 13, -524272, 655362, 15, -524271, 720898, 15, -65511, 655362, 15, -65510, 720898, 15, 262147, 655362, 15, 262148, 720898, 15, -524262, 786434, 15, -524261, 851970, 15, -458745, 655362, 17, -458744, 655362, 17, -458743, 655362, 17, -458742, 655362, 17, -458741, 655362, 17, -458740, 786434, 18, -524278, 1441794, 17, -524277, 1507330, 17, -524276, 786434, 17, -524280, 1507330, 17, -524279, 655362, 16, -524275, 851970, 17, -458739, 851970, 18)
 
 [node name="Objective" parent="." index="1"]
-position = Vector2(-8, -410)
+position = Vector2(-6, -367)
 next_level = 9
 
 [node name="Win Screen" parent="." index="3" node_paths=PackedStringArray("collectables")]
