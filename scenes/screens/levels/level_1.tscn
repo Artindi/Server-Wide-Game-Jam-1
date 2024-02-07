@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bn6f7ca4bl2ie" path="res://scenes/screens/levels/template.tscn" id="1_fxg4g"]
 [ext_resource type="Texture2D" uid="uid://dxklqc14ijc7t" path="res://assets/images/bg_level_1.png" id="2_pjsbr"]
-[ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/Player/Custom_camera.tscn" id="2_tgaxo"]
+[ext_resource type="PackedScene" uid="uid://b6dero46emrnq" path="res://scenes/player/Custom_camera.tscn" id="2_tgaxo"]
 [ext_resource type="PackedScene" uid="uid://b72dkcfp1mghu" path="res://scenes/collectable.tscn" id="4_7xd1h"]
 
 [node name="Level 1" instance=ExtResource("1_fxg4g")]
@@ -18,7 +18,7 @@ layer_1/tile_data = PackedInt32Array(262157, 1048578, 14, 327693, 1048578, 15, 3
 layer_2/tile_data = PackedInt32Array(393231, 1572866, 17, 393232, 1638402, 17, 393229, 1441794, 17, 393230, 1507330, 17)
 
 [node name="Objective" parent="." index="2"]
-position = Vector2(256, -408)
+position = Vector2(257, -396)
 next_level = 2
 
 [node name="Win Screen" parent="." index="4" node_paths=PackedStringArray("collectables")]

@@ -20,7 +20,7 @@ layer_1/tile_data = PackedInt32Array(-196624, 589826, 23, -131088, 589826, 24, -
 layer_2/tile_data = PackedInt32Array(-393234, 1310722, 17, -327698, 1310722, 18, -393233, 1376258, 17, -327697, 1376258, 18, 65504, 524290, 11, 131040, 524290, 12, 65505, 589826, 11, 131041, 589826, 12, 131042, 655362, 15, 131043, 720898, 15)
 
 [node name="Objective" parent="." index="1"]
-position = Vector2(-493, -338)
+position = Vector2(-495, -309)
 next_level = 4
 
 [node name="Win Screen" parent="." index="3" node_paths=PackedStringArray("collectables")]
